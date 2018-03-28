@@ -1,0 +1,34 @@
+|logica1
+in1[0] => Add0.IN2
+in1[0] => Add1.IN4
+in1[0] => Mult0.IN1
+in1[0] => Div0.IN5
+in1[1] => Add0.IN1
+in1[1] => Add1.IN3
+in1[1] => Mult0.IN0
+in1[1] => Div0.IN4
+in2[0] => Add0.IN4
+in2[0] => Mult0.IN3
+in2[0] => Div0.IN7
+in2[0] => Add1.IN2
+in2[1] => Add0.IN3
+in2[1] => Mult0.IN2
+in2[1] => Div0.IN6
+in2[1] => Add1.IN1
+sel[0] => Equal0.IN1
+sel[0] => Equal1.IN1
+sel[0] => Equal2.IN0
+sel[0] => Equal3.IN1
+sel[1] => Equal0.IN0
+sel[1] => Equal1.IN0
+sel[1] => Equal2.IN1
+sel[1] => Equal3.IN0
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+

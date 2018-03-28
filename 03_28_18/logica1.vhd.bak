@@ -1,0 +1,9 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+--
+ENTITY ex_2  IS 
+	PORT(
+		in1, in2 : IN STD_LOGIC ;
+		saida : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		);
+END ENTITY;
