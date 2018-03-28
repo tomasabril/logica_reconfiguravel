@@ -1,0 +1,34 @@
+|ex_1_logica
+a => lall.IN0
+a => la.DATAIN
+b => lall.IN1
+b => lb.DATAIN
+c => lall.IN1
+c => lc.DATAIN
+d => lall.IN1
+d => ld.DATAIN
+e => lall.IN1
+e => le.DATAIN
+f => lall.IN1
+f => lf.DATAIN
+g => lall.IN1
+g => lg.DATAIN
+h => lall.IN1
+h => lh.DATAIN
+i => lall.IN1
+i => li.DATAIN
+j => lall.IN1
+j => lj.DATAIN
+lall <= lall.DB_MAX_OUTPUT_PORT_TYPE
+la <= a.DB_MAX_OUTPUT_PORT_TYPE
+lb <= b.DB_MAX_OUTPUT_PORT_TYPE
+lc <= c.DB_MAX_OUTPUT_PORT_TYPE
+ld <= d.DB_MAX_OUTPUT_PORT_TYPE
+le <= e.DB_MAX_OUTPUT_PORT_TYPE
+lf <= f.DB_MAX_OUTPUT_PORT_TYPE
+lg <= g.DB_MAX_OUTPUT_PORT_TYPE
+lh <= h.DB_MAX_OUTPUT_PORT_TYPE
+li <= i.DB_MAX_OUTPUT_PORT_TYPE
+lj <= j.DB_MAX_OUTPUT_PORT_TYPE
+
+

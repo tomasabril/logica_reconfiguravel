@@ -1,0 +1,16 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+--
+ENTITY ex_3  IS 
+	PORT(
+		a , b , c , d : IN STD_LOGIC ;
+		led : OUT STD_LOGIC 
+		);
+END ENTITY;
+
+ARCHITECTURE ex_3 OF ex_3 IS
+	BEGIN
+		led <= NOT(a AND b AND c AND d);
+		led <= NOT(a XOR b XOR c XOR d);
+
+END ARCHITECTURE;

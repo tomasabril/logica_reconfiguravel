@@ -1,0 +1,17 @@
+|ex_1
+a => Add0.IN7
+b => Add0.IN8
+c => Add1.IN8
+d => Add2.IN8
+e => Add3.IN8
+f => Add4.IN8
+g => Add5.IN8
+h => Add6.IN8
+i => Add7.IN8
+j => Add8.IN8
+saida[0] << Add8.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] << Add8.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] << Add8.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] << Add8.DB_MAX_OUTPUT_PORT_TYPE
+
+

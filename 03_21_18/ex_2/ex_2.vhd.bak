@@ -1,0 +1,31 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+--
+ENTITY ex_2  IS 
+	PORT(
+		a , b , c , d , e , f , g , h , i , j : IN STD_LOGIC ;
+		saida : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		);
+END ENTITY;
+
+ARCHITECTURE ex_2 OF ex_2 IS
+	SIGNAL x : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	BEGIN
+		 x <= a + b + c + + d + e + f + g + h + i + j;
+		saida <=  "1111110" WHEN x = "0000" ELSE
+				"0110000" WHEN x = "0001" ELSE
+				"1101101" WHEN x = "0010" ELSE
+				"1111001" WHEN x = "0011" ELSE
+				"0110011" WHEN x = "0100" ELSE
+				"1011011" WHEN x = "0101" ELSE
+				"1011111" WHEN x = "0110" ELSE
+				"1110000" WHEN x = "0111" ELSE
+				"1101101" WHEN x = "1000" ELSE
+				"1110011" WHEN x = "1001" ELSE
+				"1101101" WHEN x = "1010" ELSE
+				"1101101" WHEN x = "0010" ELSE
+
+
+
+
+END ARCHITECTURE;

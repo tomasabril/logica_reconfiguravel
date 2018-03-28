@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/allan/OneDrive/Documentos/logica/ex_1_logica.vhdl
+source_file = 1, C:/Users/allan/OneDrive/Documentos/logica/ex_1_logica.vhd
+source_file = 1, C:/Users/allan/OneDrive/Documentos/logica/db/ex_1_logica.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = ex_1_logica
+instance = comp, \AND_OUT~output\, AND_OUT~output, ex_1_logica, 1
+instance = comp, \a~input\, a~input, ex_1_logica, 1
+instance = comp, \c~input\, c~input, ex_1_logica, 1
+instance = comp, \b~input\, b~input, ex_1_logica, 1
+instance = comp, \AND_OUT~0\, AND_OUT~0, ex_1_logica, 1

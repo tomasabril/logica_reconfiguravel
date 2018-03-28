@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\allan\OneDrive\Documentos\logica\simulation\qsim
+vex_1_logica
+Z1 !s100 X:Nkf[E5Cb4:T4<Le;Ja40
+Z2 I1kR^<GIBjHDPK>D2M6SH81
+Z3 V;z8?6H86bbaXZ;Ez?l>0M2
+Z4 dC:\Users\allan\OneDrive\Documentos\logica\simulation\qsim
+Z5 w1521052687
+Z6 8ex_1_logica.vo
+Z7 Fex_1_logica.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|ex_1_logica.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1521052689.483000
+Z12 !s107 ex_1_logica.vo|
+!s101 -O0
+vex_1_logica_vlg_check_tst
+!i10b 1
+Z13 !s100 ZhY:@RF@Vdchjak>^X12b0
+Z14 IR]<K>KaLSN4l8Wl@fkd^12
+Z15 VnI2e[0^eDGc4R7oiEDRQe2
+R4
+Z16 w1521052686
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1521052689.652000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+vex_1_logica_vlg_sample_tst
+!i10b 1
+Z22 !s100 FO_E?hN0;eF;E_gbfLh5>2
+Z23 ICQ7kCHQP[BCFVIVieiFzz1
+Z24 VTdnRef8JT0Y44Q;S>^6lK1
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vex_1_logica_vlg_vec_tst
+!i10b 1
+!s100 C9^HYV<lD?5a;d`:g@9Sk3
+Id<X`5JbfEJS9GZaCFOfc[2
+Z25 VlS85MQcLlHPOIJ]_Al0Se3
+R4
+R16
+R17
+R18
+Z26 L0 156
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

@@ -1,0 +1,8 @@
+|ex_3
+a => Add0.IN7
+b => Add0.IN8
+c => Add1.IN8
+d => Add2.IN8
+led << led.DB_MAX_OUTPUT_PORT_TYPE
+
+

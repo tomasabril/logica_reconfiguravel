@@ -1,0 +1,25 @@
+|ex_2_logica
+a => e.IN0
+a => ou.IN0
+a => xou.IN0
+a => nou.IN0
+a => buff.DATAIN
+a => nao.DATAIN
+b => e.IN1
+b => ou.IN1
+b => xou.IN1
+b => nou.IN1
+c => e.IN1
+c => ou.IN1
+c => xou.IN1
+c => nou.IN1
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+ou <= ou.DB_MAX_OUTPUT_PORT_TYPE
+nao <= a.DB_MAX_OUTPUT_PORT_TYPE
+xou <= xou.DB_MAX_OUTPUT_PORT_TYPE
+ne <= e.DB_MAX_OUTPUT_PORT_TYPE
+nou <= nou.DB_MAX_OUTPUT_PORT_TYPE
+nxou <= xou.DB_MAX_OUTPUT_PORT_TYPE
+buff <= a.DB_MAX_OUTPUT_PORT_TYPE
+
+

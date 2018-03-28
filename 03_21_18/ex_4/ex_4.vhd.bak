@@ -1,0 +1,24 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+--
+ENTITY ex_4  IS 
+	PORT(
+		a , b , c , d : IN STD_LOGIC ;
+               -- a b c d
+		s : OUT STD_LOGIC_VECTOR(3 downto 0)
+		);
+END ENTITY;
+
+ARCHITECTURE ex_4 OF ex_4 IS
+	BEGIN
+		 s <= "1100" WHEN a AND b ELSE
+                         "1000" WHEN a AND NOT(b) ELSE
+			 "0000" WHEN c AND d ELSE
+			 "0000" WHEN b AND d ELSE
+			 "0010" WHEN c ELSE
+			 "0001" WHEN d ELSE
+			 "0000";
+
+END ARCHITECTURE;
+
+

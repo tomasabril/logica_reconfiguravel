@@ -1,0 +1,15 @@
+|ex_3_logica
+a => o2.IN0
+a => o4.IN0
+a => o1.IN0
+a => o3.IN0
+b => o3.IN1
+b => o4.IN1
+b => o1.IN1
+b => o2.IN1
+o1 <= o1.DB_MAX_OUTPUT_PORT_TYPE
+o2 <= o2.DB_MAX_OUTPUT_PORT_TYPE
+o3 <= o3.DB_MAX_OUTPUT_PORT_TYPE
+o4 <= o4.DB_MAX_OUTPUT_PORT_TYPE
+
+
