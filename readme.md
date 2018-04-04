@@ -1,4 +1,4 @@
-# VHDL - codigos da disciplina 
+﻿# VHDL - codigos da disciplina 
 
 ### EL68A1 LÓGICA RECONFIGURÁVEL 2018-01
 
@@ -6,12 +6,12 @@ Prof. Ricardo Pedroni
 
 Grupo:
 - Allan Patrick
-- Moritz
+- Moritz Duarte Pinheiro-Torres Vogt
 - Tomás Abril
 
 >Software: Quartus II 13
 
->Placa: 
+>Placa: CICLONE 3 EP3C16F484C6N
 
 <http://rpedroni.com.br/>
 
