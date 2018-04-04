@@ -1,0 +1,10 @@
+|ex_2
+ent[0] => sum.IN0
+ent[1] => sum.IN1
+ent[1] => sum.IN0
+ent[2] => sum.IN1
+ent[2] => sum.IN1
+ent[3] => sum.IN1
+saida << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
