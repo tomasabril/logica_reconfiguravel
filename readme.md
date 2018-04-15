@@ -11,7 +11,7 @@ Grupo:
 
 >Software: Quartus II 13
 
->Placa: CICLONE 3 EP3C16F484C6N
+>Placa: CICLONE 3 EP3C16F484C6 N
 
 <http://rpedroni.com.br/>
 

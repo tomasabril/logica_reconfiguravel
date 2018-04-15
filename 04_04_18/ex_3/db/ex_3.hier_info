@@ -1,0 +1,40 @@
+|ex_3
+a => Add2.IN63
+b => Add2.IN64
+c => Add3.IN64
+d => Add4.IN64
+e => Add5.IN64
+f => Add6.IN64
+g => Add7.IN64
+h => Add8.IN64
+i => Add9.IN64
+j => Add10.IN64
+b0 => Add0.IN63
+b1 => Add0.IN64
+b2 => Add1.IN64
+saida0[0] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[1] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[2] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[3] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[4] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[5] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[6] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida1[0] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[1] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[2] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[3] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[4] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[5] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saida1[6] <= saida1.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[0] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[1] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[2] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[3] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[4] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[5] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[6] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[7] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[8] <= x.DB_MAX_OUTPUT_PORT_TYPE
+saidabin[9] <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+

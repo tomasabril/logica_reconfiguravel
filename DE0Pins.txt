@@ -20,10 +20,10 @@ BUTTON[1]: PIN_ G3
 BUTTON[2]: PIN_ F1
 
 *** LEDS
-LEDG[0]: PIN_J1LEDG[1]: PIN_J2LEDG[2]: PIN_J3LEDG[3]: PIN_H1LEDG[4]: PIN_F2LEDG[5]: PIN_E1LEDG[6]: PIN_C1LEDG[7]: PIN_C2LEDG[8]: PIN_B2LEDG[9]: PIN_B1*** SSDS     __0__
-  5 |     | 1
-    |__6__|
-  4 |     | 2
+LEDG[0]: PIN_J1LEDG[1]: PIN_J2LEDG[2]: PIN_J3LEDG[3]: PIN_H1LEDG[4]: PIN_F2LEDG[5]: PIN_E1LEDG[6]: PIN_C1LEDG[7]: PIN_C2LEDG[8]: PIN_B2LEDG[9]: PIN_B1*** SSDS     __6__
+  1 |     | 5
+    |__0__|
+  2 |     | 4
     |_____|   [DP]
        3
 
