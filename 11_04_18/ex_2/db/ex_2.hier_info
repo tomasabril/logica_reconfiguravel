@@ -1,0 +1,23 @@
+|ex_2
+sw[0] => Mult0.IN63
+sw[1] => Mult0.IN62
+sw[2] => Mult0.IN61
+bt[0] => Equal0.IN0
+bt[1] => Equal1.IN0
+bt[2] => ~NO_FANOUT~
+saida0[0] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[1] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[2] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[3] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[4] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[5] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[6] <= saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida1[0] <= <VCC>
+saida1[1] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+saida1[2] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+saida1[3] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+saida1[4] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+saida1[5] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+saida1[6] <= Equal16.DB_MAX_OUTPUT_PORT_TYPE
+
+
