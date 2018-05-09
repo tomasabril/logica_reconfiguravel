@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+ENTITY
+ex_1 is port(
+          speed_m : in STD_LOGIC;
+			 speed_f : in STD_LOGIC;
+			 speed_s : in STD_LOGIC;
+			 reverse : in STD_LOGIC;
+			 tail_in : in STD_LOGIC; 
+			 tail_de : in STD_LOGIC;
+			 leds : out STD_LOGIC_VECTOR (9 DOWNTO 0));
+end ex_1;
+
+ARCHITECTURE ex_1 of ex_1 is 
+begin
+		
+		p

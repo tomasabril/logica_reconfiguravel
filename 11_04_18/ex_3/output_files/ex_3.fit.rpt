@@ -1,6 +1,6 @@
 Fitter report for ex_3
-Wed Apr 18 15:55:47 2018
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Wed Apr 18 19:41:59 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -26,7 +26,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  18. Delay Chain Summary
  19. Pad To Core Delay Chain Fanout
  20. Non-Global High Fan-Out Signals
- 21. Other Routing Usage Summary
+ 21. Routing Usage Summary
  22. LAB Logic Elements
  23. LAB Signals Sourced
  24. LAB Signals Sourced Out
@@ -63,8 +63,8 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Wed Apr 18 15:55:47 2018      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Fitter Status                      ; Successful - Wed Apr 18 19:41:59 2018      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; ex_3                                       ;
 ; Top-level Entity Name              ; ex_3                                       ;
 ; Family                             ; Cyclone III                                ;
@@ -142,15 +142,22 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +-------------------------------------------------+
@@ -162,19 +169,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------+--------------------------------------+
 
 
-+----------------------------------------------+
-; Incremental Compilation Preservation Summary ;
-+---------------------+------------------------+
-; Type                ; Value                  ;
-+---------------------+------------------------+
-; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 44 ( 0.00 % )      ;
-;     -- Achieved     ; 0 / 44 ( 0.00 % )      ;
-;                     ;                        ;
-; Routing (by net)    ;                        ;
-;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
-;     -- Achieved     ; 0 / 0 ( 0.00 % )       ;
-+---------------------+------------------------+
++-------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                    ;
++---------------------+-------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+-------------------+----------------------------+--------------------------+
+; Placement (by node) ;                   ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 44 ) ; 0.00 % ( 0 / 44 )          ; 0.00 % ( 0 / 44 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 44 ) ; 0.00 % ( 0 / 44 )          ; 0.00 % ( 0 / 44 )        ;
+;                     ;                   ;                            ;                          ;
+; Routing (by net)    ;                   ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+-------------------+----------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,20 +194,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Incremental Compilation Placement Preservation                                                             ;
-+--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
-+--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 34      ; 0                 ; N/A                     ; Source File       ;
-; hard_block:auto_generated_inst ; 10      ; 0                 ; N/A                     ; Source File       ;
-+--------------------------------+---------+-------------------+-------------------------+-------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Placement Preservation                                                                                     ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Top                            ; 0.00 % ( 0 / 34 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Documents/reconfiguravel/output_files/ex_3.pin.
+The pin-out file can be found in C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.pin.
 
 
 +---------------------------------------------------------------------+
@@ -279,6 +286,7 @@ The pin-out file can be found in D:/Documents/reconfiguravel/output_files/ex_3.p
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 0                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 0 / 15408 ( 0 % )    ; 0 / 15408 ( 0 % )              ;
+;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total LABs:  partially or completely used   ; 1 / 963 ( < 1 % )    ; 0 / 963 ( 0 % )                ;
 ;                                             ;                      ;                                ;
@@ -886,7 +894,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |ex_3                      ; 11 (11)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; |ex_3               ;              ;
+; |ex_3                      ; 11 (11)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; |ex_3               ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -897,15 +905,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name              ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +-------------------+----------+---------------+---------------+-----------------------+-----+------+
 ; saida             ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; entrada_padrao[0] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; entrada_padrao[1] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; entrada_padrao[0] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; entrada_padrao[1] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; entrada_busca[1]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; entrada_busca[0]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; entrada_padrao[2] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; entrada_busca[2]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; entrada_busca[3]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; entrada_busca[3]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; entrada_busca[4]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; entrada_busca[5]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; entrada_busca[5]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; entrada_busca[6]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +-------------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -916,17 +924,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
 ; entrada_padrao[0]   ;                   ;         ;
-;      - WideAnd0~0   ; 0                 ; 6       ;
-;      - WideAnd1~0   ; 0                 ; 6       ;
-;      - WideAnd2~0   ; 0                 ; 6       ;
-;      - WideAnd3~0   ; 0                 ; 6       ;
-;      - WideAnd4~0   ; 0                 ; 6       ;
-; entrada_padrao[1]   ;                   ;         ;
 ;      - WideAnd0~0   ; 1                 ; 6       ;
 ;      - WideAnd1~0   ; 1                 ; 6       ;
 ;      - WideAnd2~0   ; 1                 ; 6       ;
 ;      - WideAnd3~0   ; 1                 ; 6       ;
 ;      - WideAnd4~0   ; 1                 ; 6       ;
+; entrada_padrao[1]   ;                   ;         ;
+;      - WideAnd0~0   ; 0                 ; 6       ;
+;      - WideAnd1~0   ; 0                 ; 6       ;
+;      - WideAnd2~0   ; 0                 ; 6       ;
+;      - WideAnd3~0   ; 0                 ; 6       ;
+;      - WideAnd4~0   ; 0                 ; 6       ;
 ; entrada_busca[1]    ;                   ;         ;
 ;      - WideAnd0~0   ; 1                 ; 6       ;
 ;      - WideAnd1~0   ; 1                 ; 6       ;
@@ -943,16 +951,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - WideAnd1~0   ; 0                 ; 6       ;
 ;      - WideAnd2~0   ; 0                 ; 6       ;
 ; entrada_busca[3]    ;                   ;         ;
-;      - WideOr0~0    ; 1                 ; 6       ;
-;      - WideAnd2~0   ; 1                 ; 6       ;
-;      - WideAnd3~0   ; 1                 ; 6       ;
+;      - WideOr0~0    ; 0                 ; 6       ;
+;      - WideAnd2~0   ; 0                 ; 6       ;
+;      - WideAnd3~0   ; 0                 ; 6       ;
 ; entrada_busca[4]    ;                   ;         ;
 ;      - WideAnd2     ; 0                 ; 6       ;
 ;      - WideAnd3~0   ; 0                 ; 6       ;
 ;      - WideAnd4~0   ; 0                 ; 6       ;
 ; entrada_busca[5]    ;                   ;         ;
-;      - WideOr0~1    ; 0                 ; 6       ;
-;      - WideAnd4~0   ; 0                 ; 6       ;
+;      - WideOr0~1    ; 1                 ; 6       ;
+;      - WideAnd4~0   ; 1                 ; 6       ;
 ; entrada_busca[6]    ;                   ;         ;
 ;      - busca[4][2]  ; 1                 ; 6       ;
 +---------------------+-------------------+---------+
@@ -987,19 +995,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Other Routing Usage Summary                         ;
-+-----------------------------+-----------------------+
-; Other Routing Resource Type ; Usage                 ;
-+-----------------------------+-----------------------+
-; Block interconnects         ; 11 / 47,787 ( < 1 % ) ;
-; C16 interconnects           ; 0 / 1,804 ( 0 % )     ;
-; C4 interconnects            ; 9 / 31,272 ( < 1 % )  ;
-; Global clocks               ; 0 / 20 ( 0 % )        ;
-; Local interconnects         ; 10 / 15,408 ( < 1 % ) ;
-; R24 interconnects           ; 0 / 1,775 ( 0 % )     ;
-; R4 interconnects            ; 0 / 41,310 ( 0 % )    ;
-+-----------------------------+-----------------------+
++-----------------------------------------------+
+; Routing Usage Summary                         ;
++-----------------------+-----------------------+
+; Routing Resource Type ; Usage                 ;
++-----------------------+-----------------------+
+; Block interconnects   ; 11 / 47,787 ( < 1 % ) ;
+; C16 interconnects     ; 0 / 1,804 ( 0 % )     ;
+; C4 interconnects      ; 10 / 31,272 ( < 1 % ) ;
+; Direct links          ; 0 / 47,787 ( 0 % )    ;
+; Global clocks         ; 0 / 20 ( 0 % )        ;
+; Local interconnects   ; 10 / 15,408 ( < 1 % ) ;
+; R24 interconnects     ; 0 / 1,775 ( 0 % )     ;
+; R4 interconnects      ; 0 / 41,310 ( 0 % )    ;
++-----------------------+-----------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -1190,7 +1199,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (119006): Selected device EP3C16F484C6 for design "ex_3"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1217,7 +1226,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1226,27 +1235,27 @@ Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y20 to location X9_Y29
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file D:/Documents/reconfiguravel/output_files/ex_3.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 661 megabytes
-    Info: Processing ended: Wed Apr 18 15:55:48 2018
-    Info: Elapsed time: 00:00:13
+Info (144001): Generated suppressed messages file C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1107 megabytes
+    Info: Processing ended: Wed Apr 18 19:42:00 2018
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Documents/reconfiguravel/output_files/ex_3.fit.smsg.
+The suppressed messages can be found in C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.fit.smsg.
 
 

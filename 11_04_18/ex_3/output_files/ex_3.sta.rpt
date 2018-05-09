@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for ex_3
-Wed Apr 18 15:55:54 2018
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Wed Apr 18 19:42:10 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -38,8 +38,8 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  30. Minimum Propagation Delay
  31. Fast 1200mV 0C Model Metastability Report
  32. Multicorner Timing Analysis Summary
- 33. Progagation Delay
- 34. Minimum Progagation Delay
+ 33. Propagation Delay
+ 34. Minimum Propagation Delay
  35. Board Trace Model Assignments
  36. Input Transition Times
  37. Slow Corner Signal Integrity Metrics
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; TimeQuest Timing Analyzer Summary                                       ;
 +--------------------+----------------------------------------------------+
-; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name      ; ex_3                                               ;
 ; Device Family      ; Cyclone III                                        ;
 ; Device Name        ; EP3C16F484C6                                       ;
@@ -84,15 +84,22 @@ applicable agreement for further details.
 +--------------------+----------------------------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
 ----------
@@ -148,16 +155,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 7.793 ; 7.879 ; 8.184 ; 8.302 ;
-; entrada_busca[1]  ; saida       ; 8.172 ; 8.339 ; 8.668 ; 8.706 ;
-; entrada_busca[2]  ; saida       ; 8.196 ; 8.311 ; 8.589 ; 8.736 ;
-; entrada_busca[3]  ; saida       ; 8.351 ; 8.547 ; 8.853 ; 8.920 ;
-; entrada_busca[4]  ; saida       ; 7.640 ; 7.751 ; 8.040 ; 8.182 ;
-; entrada_busca[5]  ; saida       ; 7.425 ; 7.493 ; 7.836 ; 7.880 ;
-; entrada_busca[6]  ; saida       ; 7.510 ; 7.467 ; 7.914 ; 7.885 ;
-; entrada_padrao[0] ; saida       ; 8.177 ; 8.329 ; 8.609 ; 8.705 ;
-; entrada_padrao[1] ; saida       ; 8.117 ; 8.234 ; 8.525 ; 8.633 ;
-; entrada_padrao[2] ; saida       ; 8.005 ; 8.142 ; 8.453 ; 8.556 ;
+; entrada_busca[0]  ; saida       ; 7.998 ; 8.155 ; 8.428 ; 8.529 ;
+; entrada_busca[1]  ; saida       ; 8.016 ; 8.217 ; 8.488 ; 8.560 ;
+; entrada_busca[2]  ; saida       ; 8.053 ; 8.194 ; 8.467 ; 8.640 ;
+; entrada_busca[3]  ; saida       ; 7.857 ; 8.079 ; 8.339 ; 8.432 ;
+; entrada_busca[4]  ; saida       ; 7.718 ; 7.855 ; 8.114 ; 8.282 ;
+; entrada_busca[5]  ; saida       ; 7.304 ; 7.401 ; 7.737 ; 7.811 ;
+; entrada_busca[6]  ; saida       ; 7.155 ; 7.172 ; 7.572 ; 7.557 ;
+; entrada_padrao[0] ; saida       ; 8.221 ; 8.399 ; 8.661 ; 8.783 ;
+; entrada_padrao[1] ; saida       ; 7.990 ; 8.133 ; 8.431 ; 8.565 ;
+; entrada_padrao[2] ; saida       ; 7.886 ; 8.052 ; 8.362 ; 8.478 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -166,16 +173,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 7.529 ; 7.586 ; 7.911 ; 7.999 ;
-; entrada_busca[1]  ; saida       ; 7.407 ; 7.462 ; 7.838 ; 7.883 ;
-; entrada_busca[2]  ; saida       ; 7.302 ; 7.332 ; 7.688 ; 7.749 ;
-; entrada_busca[3]  ; saida       ; 7.073 ; 7.102 ; 7.479 ; 7.537 ;
-; entrada_busca[4]  ; saida       ; 6.670 ; 6.668 ; 7.059 ; 7.088 ;
-; entrada_busca[5]  ; saida       ; 6.801 ; 6.801 ; 7.196 ; 7.187 ;
-; entrada_busca[6]  ; saida       ; 7.260 ; 7.219 ; 7.636 ; 7.625 ;
-; entrada_padrao[0] ; saida       ; 6.842 ; 6.882 ; 7.288 ; 7.280 ;
-; entrada_padrao[1] ; saida       ; 7.018 ; 7.100 ; 7.483 ; 7.431 ;
-; entrada_padrao[2] ; saida       ; 7.112 ; 7.136 ; 7.491 ; 7.519 ;
+; entrada_busca[0]  ; saida       ; 7.675 ; 7.810 ; 8.119 ; 8.206 ;
+; entrada_busca[1]  ; saida       ; 7.260 ; 7.342 ; 7.667 ; 7.739 ;
+; entrada_busca[2]  ; saida       ; 7.168 ; 7.225 ; 7.577 ; 7.665 ;
+; entrada_busca[3]  ; saida       ; 6.599 ; 6.655 ; 6.985 ; 7.070 ;
+; entrada_busca[4]  ; saida       ; 6.821 ; 6.889 ; 7.270 ; 7.277 ;
+; entrada_busca[5]  ; saida       ; 6.675 ; 6.703 ; 7.093 ; 7.112 ;
+; entrada_busca[6]  ; saida       ; 6.980 ; 6.994 ; 7.387 ; 7.370 ;
+; entrada_padrao[0] ; saida       ; 6.810 ; 6.836 ; 7.203 ; 7.260 ;
+; entrada_padrao[1] ; saida       ; 6.906 ; 7.019 ; 7.399 ; 7.376 ;
+; entrada_padrao[2] ; saida       ; 6.990 ; 7.076 ; 7.398 ; 7.483 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -226,16 +233,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 7.220 ; 7.242 ; 7.559 ; 7.610 ;
-; entrada_busca[1]  ; saida       ; 7.566 ; 7.662 ; 7.977 ; 7.956 ;
-; entrada_busca[2]  ; saida       ; 7.587 ; 7.628 ; 7.930 ; 8.000 ;
-; entrada_busca[3]  ; saida       ; 7.721 ; 7.836 ; 8.147 ; 8.145 ;
-; entrada_busca[4]  ; saida       ; 7.073 ; 7.118 ; 7.420 ; 7.494 ;
-; entrada_busca[5]  ; saida       ; 6.883 ; 6.900 ; 7.240 ; 7.238 ;
-; entrada_busca[6]  ; saida       ; 6.949 ; 6.886 ; 7.285 ; 7.236 ;
-; entrada_padrao[0] ; saida       ; 7.555 ; 7.630 ; 7.932 ; 7.959 ;
-; entrada_padrao[1] ; saida       ; 7.515 ; 7.558 ; 7.856 ; 7.891 ;
-; entrada_padrao[2] ; saida       ; 7.408 ; 7.473 ; 7.781 ; 7.821 ;
+; entrada_busca[0]  ; saida       ; 7.406 ; 7.510 ; 7.773 ; 7.829 ;
+; entrada_busca[1]  ; saida       ; 7.416 ; 7.560 ; 7.814 ; 7.841 ;
+; entrada_busca[2]  ; saida       ; 7.449 ; 7.532 ; 7.795 ; 7.907 ;
+; entrada_busca[3]  ; saida       ; 7.266 ; 7.423 ; 7.685 ; 7.725 ;
+; entrada_busca[4]  ; saida       ; 7.146 ; 7.233 ; 7.493 ; 7.609 ;
+; entrada_busca[5]  ; saida       ; 6.772 ; 6.834 ; 7.123 ; 7.165 ;
+; entrada_busca[6]  ; saida       ; 6.624 ; 6.634 ; 6.979 ; 6.960 ;
+; entrada_padrao[0] ; saida       ; 7.612 ; 7.729 ; 7.987 ; 8.056 ;
+; entrada_padrao[1] ; saida       ; 7.399 ; 7.484 ; 7.768 ; 7.845 ;
+; entrada_padrao[2] ; saida       ; 7.291 ; 7.401 ; 7.688 ; 7.760 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -244,16 +251,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 6.986 ; 6.987 ; 7.318 ; 7.347 ;
-; entrada_busca[1]  ; saida       ; 6.880 ; 6.890 ; 7.235 ; 7.233 ;
-; entrada_busca[2]  ; saida       ; 6.787 ; 6.770 ; 7.124 ; 7.135 ;
-; entrada_busca[3]  ; saida       ; 6.571 ; 6.559 ; 6.919 ; 6.934 ;
-; entrada_busca[4]  ; saida       ; 6.206 ; 6.163 ; 6.546 ; 6.531 ;
-; entrada_busca[5]  ; saida       ; 6.332 ; 6.291 ; 6.678 ; 6.631 ;
-; entrada_busca[6]  ; saida       ; 6.733 ; 6.670 ; 7.043 ; 7.011 ;
-; entrada_padrao[0] ; saida       ; 6.353 ; 6.347 ; 6.746 ; 6.700 ;
-; entrada_padrao[1] ; saida       ; 6.525 ; 6.560 ; 6.917 ; 6.833 ;
-; entrada_padrao[2] ; saida       ; 6.609 ; 6.600 ; 6.930 ; 6.925 ;
+; entrada_busca[0]  ; saida       ; 7.117 ; 7.205 ; 7.500 ; 7.548 ;
+; entrada_busca[1]  ; saida       ; 6.737 ; 6.790 ; 7.080 ; 7.121 ;
+; entrada_busca[2]  ; saida       ; 6.656 ; 6.682 ; 6.995 ; 7.049 ;
+; entrada_busca[3]  ; saida       ; 6.134 ; 6.165 ; 6.475 ; 6.533 ;
+; entrada_busca[4]  ; saida       ; 6.344 ; 6.382 ; 6.729 ; 6.718 ;
+; entrada_busca[5]  ; saida       ; 6.207 ; 6.210 ; 6.558 ; 6.555 ;
+; entrada_busca[6]  ; saida       ; 6.473 ; 6.482 ; 6.819 ; 6.800 ;
+; entrada_padrao[0] ; saida       ; 6.343 ; 6.344 ; 6.688 ; 6.717 ;
+; entrada_padrao[1] ; saida       ; 6.428 ; 6.510 ; 6.835 ; 6.795 ;
+; entrada_padrao[2] ; saida       ; 6.486 ; 6.540 ; 6.835 ; 6.889 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -298,16 +305,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 4.570 ; 4.668 ; 5.108 ; 5.224 ;
-; entrada_busca[1]  ; saida       ; 4.795 ; 4.937 ; 5.413 ; 5.479 ;
-; entrada_busca[2]  ; saida       ; 4.812 ; 4.929 ; 5.360 ; 5.495 ;
-; entrada_busca[3]  ; saida       ; 4.899 ; 5.060 ; 5.519 ; 5.604 ;
-; entrada_busca[4]  ; saida       ; 4.501 ; 4.605 ; 5.040 ; 5.163 ;
-; entrada_busca[5]  ; saida       ; 4.401 ; 4.470 ; 4.974 ; 5.031 ;
-; entrada_busca[6]  ; saida       ; 4.445 ; 4.435 ; 5.021 ; 5.024 ;
-; entrada_padrao[0] ; saida       ; 4.802 ; 4.932 ; 5.379 ; 5.482 ;
-; entrada_padrao[1] ; saida       ; 4.761 ; 4.881 ; 5.327 ; 5.440 ;
-; entrada_padrao[2] ; saida       ; 4.714 ; 4.832 ; 5.309 ; 5.405 ;
+; entrada_busca[0]  ; saida       ; 4.707 ; 4.829 ; 5.283 ; 5.378 ;
+; entrada_busca[1]  ; saida       ; 4.699 ; 4.852 ; 5.320 ; 5.397 ;
+; entrada_busca[2]  ; saida       ; 4.731 ; 4.857 ; 5.294 ; 5.438 ;
+; entrada_busca[3]  ; saida       ; 4.620 ; 4.790 ; 5.219 ; 5.313 ;
+; entrada_busca[4]  ; saida       ; 4.564 ; 4.678 ; 5.113 ; 5.246 ;
+; entrada_busca[5]  ; saida       ; 4.334 ; 4.412 ; 4.911 ; 4.977 ;
+; entrada_busca[6]  ; saida       ; 4.251 ; 4.264 ; 4.827 ; 4.822 ;
+; entrada_padrao[0] ; saida       ; 4.856 ; 4.995 ; 5.440 ; 5.552 ;
+; entrada_padrao[1] ; saida       ; 4.708 ; 4.837 ; 5.287 ; 5.409 ;
+; entrada_padrao[2] ; saida       ; 4.665 ; 4.794 ; 5.260 ; 5.361 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -316,16 +323,16 @@ No paths to report.
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 4.423 ; 4.502 ; 4.955 ; 5.054 ;
-; entrada_busca[1]  ; saida       ; 4.378 ; 4.446 ; 4.951 ; 5.018 ;
-; entrada_busca[2]  ; saida       ; 4.322 ; 4.378 ; 4.867 ; 4.942 ;
-; entrada_busca[3]  ; saida       ; 4.207 ; 4.252 ; 4.757 ; 4.821 ;
-; entrada_busca[4]  ; saida       ; 3.964 ; 3.997 ; 4.498 ; 4.551 ;
-; entrada_busca[5]  ; saida       ; 4.049 ; 4.087 ; 4.608 ; 4.639 ;
-; entrada_busca[6]  ; saida       ; 4.301 ; 4.293 ; 4.859 ; 4.868 ;
-; entrada_padrao[0] ; saida       ; 4.075 ; 4.129 ; 4.662 ; 4.688 ;
-; entrada_padrao[1] ; saida       ; 4.167 ; 4.241 ; 4.767 ; 4.769 ;
-; entrada_padrao[2] ; saida       ; 4.222 ; 4.261 ; 4.770 ; 4.810 ;
+; entrada_busca[0]  ; saida       ; 4.526 ; 4.639 ; 5.113 ; 5.198 ;
+; entrada_busca[1]  ; saida       ; 4.286 ; 4.362 ; 4.863 ; 4.938 ;
+; entrada_busca[2]  ; saida       ; 4.246 ; 4.310 ; 4.801 ; 4.884 ;
+; entrada_busca[3]  ; saida       ; 3.937 ; 3.990 ; 4.468 ; 4.540 ;
+; entrada_busca[4]  ; saida       ; 4.068 ; 4.130 ; 4.658 ; 4.687 ;
+; entrada_busca[5]  ; saida       ; 3.977 ; 4.023 ; 4.541 ; 4.580 ;
+; entrada_busca[6]  ; saida       ; 4.149 ; 4.161 ; 4.721 ; 4.713 ;
+; entrada_padrao[0] ; saida       ; 4.087 ; 4.128 ; 4.635 ; 4.696 ;
+; entrada_padrao[1] ; saida       ; 4.122 ; 4.205 ; 4.734 ; 4.743 ;
+; entrada_padrao[2] ; saida       ; 4.172 ; 4.241 ; 4.718 ; 4.794 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -346,38 +353,38 @@ No synchronizer chains to report.
 
 
 +-----------------------------------------------------------------+
-; Progagation Delay                                               ;
+; Propagation Delay                                               ;
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 7.793 ; 7.879 ; 8.184 ; 8.302 ;
-; entrada_busca[1]  ; saida       ; 8.172 ; 8.339 ; 8.668 ; 8.706 ;
-; entrada_busca[2]  ; saida       ; 8.196 ; 8.311 ; 8.589 ; 8.736 ;
-; entrada_busca[3]  ; saida       ; 8.351 ; 8.547 ; 8.853 ; 8.920 ;
-; entrada_busca[4]  ; saida       ; 7.640 ; 7.751 ; 8.040 ; 8.182 ;
-; entrada_busca[5]  ; saida       ; 7.425 ; 7.493 ; 7.836 ; 7.880 ;
-; entrada_busca[6]  ; saida       ; 7.510 ; 7.467 ; 7.914 ; 7.885 ;
-; entrada_padrao[0] ; saida       ; 8.177 ; 8.329 ; 8.609 ; 8.705 ;
-; entrada_padrao[1] ; saida       ; 8.117 ; 8.234 ; 8.525 ; 8.633 ;
-; entrada_padrao[2] ; saida       ; 8.005 ; 8.142 ; 8.453 ; 8.556 ;
+; entrada_busca[0]  ; saida       ; 7.998 ; 8.155 ; 8.428 ; 8.529 ;
+; entrada_busca[1]  ; saida       ; 8.016 ; 8.217 ; 8.488 ; 8.560 ;
+; entrada_busca[2]  ; saida       ; 8.053 ; 8.194 ; 8.467 ; 8.640 ;
+; entrada_busca[3]  ; saida       ; 7.857 ; 8.079 ; 8.339 ; 8.432 ;
+; entrada_busca[4]  ; saida       ; 7.718 ; 7.855 ; 8.114 ; 8.282 ;
+; entrada_busca[5]  ; saida       ; 7.304 ; 7.401 ; 7.737 ; 7.811 ;
+; entrada_busca[6]  ; saida       ; 7.155 ; 7.172 ; 7.572 ; 7.557 ;
+; entrada_padrao[0] ; saida       ; 8.221 ; 8.399 ; 8.661 ; 8.783 ;
+; entrada_padrao[1] ; saida       ; 7.990 ; 8.133 ; 8.431 ; 8.565 ;
+; entrada_padrao[2] ; saida       ; 7.886 ; 8.052 ; 8.362 ; 8.478 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
 +-----------------------------------------------------------------+
-; Minimum Progagation Delay                                       ;
+; Minimum Propagation Delay                                       ;
 +-------------------+-------------+-------+-------+-------+-------+
 ; Input Port        ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +-------------------+-------------+-------+-------+-------+-------+
-; entrada_busca[0]  ; saida       ; 4.423 ; 4.502 ; 4.955 ; 5.054 ;
-; entrada_busca[1]  ; saida       ; 4.378 ; 4.446 ; 4.951 ; 5.018 ;
-; entrada_busca[2]  ; saida       ; 4.322 ; 4.378 ; 4.867 ; 4.942 ;
-; entrada_busca[3]  ; saida       ; 4.207 ; 4.252 ; 4.757 ; 4.821 ;
-; entrada_busca[4]  ; saida       ; 3.964 ; 3.997 ; 4.498 ; 4.551 ;
-; entrada_busca[5]  ; saida       ; 4.049 ; 4.087 ; 4.608 ; 4.639 ;
-; entrada_busca[6]  ; saida       ; 4.301 ; 4.293 ; 4.859 ; 4.868 ;
-; entrada_padrao[0] ; saida       ; 4.075 ; 4.129 ; 4.662 ; 4.688 ;
-; entrada_padrao[1] ; saida       ; 4.167 ; 4.241 ; 4.767 ; 4.769 ;
-; entrada_padrao[2] ; saida       ; 4.222 ; 4.261 ; 4.770 ; 4.810 ;
+; entrada_busca[0]  ; saida       ; 4.526 ; 4.639 ; 5.113 ; 5.198 ;
+; entrada_busca[1]  ; saida       ; 4.286 ; 4.362 ; 4.863 ; 4.938 ;
+; entrada_busca[2]  ; saida       ; 4.246 ; 4.310 ; 4.801 ; 4.884 ;
+; entrada_busca[3]  ; saida       ; 3.937 ; 3.990 ; 4.468 ; 4.540 ;
+; entrada_busca[4]  ; saida       ; 4.068 ; 4.130 ; 4.658 ; 4.687 ;
+; entrada_busca[5]  ; saida       ; 3.977 ; 4.023 ; 4.541 ; 4.580 ;
+; entrada_busca[6]  ; saida       ; 4.149 ; 4.161 ; 4.721 ; 4.713 ;
+; entrada_padrao[0] ; saida       ; 4.087 ; 4.128 ; 4.635 ; 4.696 ;
+; entrada_padrao[1] ; saida       ; 4.122 ; 4.205 ; 4.734 ; 4.743 ;
+; entrada_padrao[2] ; saida       ; 4.172 ; 4.241 ; 4.718 ; 4.794 ;
 +-------------------+-------------+-------+-------+-------+-------+
 
 
@@ -450,7 +457,7 @@ No dedicated SERDES Transmitter circuitry present in device or used in design
 ---------------
 ; Report RSKM ;
 ---------------
-No dedicated SERDES Receiver circuitry present in device or used in design
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
 
 
 +------------------------------------------------+
@@ -472,11 +479,11 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Apr 18 15:55:52 2018
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Apr 18 19:42:06 2018
 Info: Command: quartus_sta ex_3 -c ex_3
 Info: qsta_default_script.tcl version: #1
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'ex_3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -519,10 +526,10 @@ Info (332140): No Removal paths to report
 Info (332140): No Minimum Pulse Width paths to report
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 427 megabytes
-    Info: Processing ended: Wed Apr 18 15:55:54 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 582 megabytes
+    Info: Processing ended: Wed Apr 18 19:42:10 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
 
 

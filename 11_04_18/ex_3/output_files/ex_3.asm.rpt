@@ -1,6 +1,6 @@
 Assembler report for ex_3
-Wed Apr 18 15:55:51 2018
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Wed Apr 18 19:42:04 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/Documents/reconfiguravel/output_files/ex_3.sof
+  5. Assembler Device Options: C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Apr 18 15:55:51 2018 ;
+; Assembler Status      ; Successful - Wed Apr 18 19:42:04 2018 ;
 ; Revision Name         ; ex_3                                  ;
 ; Top-level Entity Name ; ex_3                                  ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------+
-; Assembler Generated Files                         ;
-+---------------------------------------------------+
-; File Name                                         ;
-+---------------------------------------------------+
-; D:/Documents/reconfiguravel/output_files/ex_3.sof ;
-+---------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------+
-; Assembler Device Options: D:/Documents/reconfiguravel/output_files/ex_3.sof ;
-+----------------+------------------------------------------------------------+
-; Option         ; Setting                                                    ;
-+----------------+------------------------------------------------------------+
-; Device         ; EP3C16F484C6                                               ;
-; JTAG usercode  ; 0x000C90E0                                                 ;
-; Checksum       ; 0x000C90E0                                                 ;
-+----------------+------------------------------------------------------------+
+; Assembler Generated Files                                                   ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.sof ;
++-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/allan/Google Drive/logica_vhdl/11_04_18/ex_3/output_files/ex_3.sof ;
++----------------+--------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; Device         ; EP3C16F484C6                                                                         ;
+; JTAG usercode  ; 0x000C8EA6                                                                           ;
+; Checksum       ; 0x000C8EA6                                                                           ;
++----------------+--------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -102,15 +102,15 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Apr 18 15:55:49 2018
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Apr 18 19:42:02 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ex_3 -c ex_3
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 405 megabytes
-    Info: Processing ended: Wed Apr 18 15:55:51 2018
+    Info: Peak virtual memory: 528 megabytes
+    Info: Processing ended: Wed Apr 18 19:42:04 2018
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
