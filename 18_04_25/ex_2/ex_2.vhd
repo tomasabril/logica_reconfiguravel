@@ -68,7 +68,7 @@ BEGIN
 						END IF;
 					END LOOP;
 				END IF;
-				// diminuir tail
+			// diminuir tail
 			ELSIF (tail_de = '1' AND tail_size > 1) THEN
 				// debouncing
 				IF (debounce_counter > 0) THEN
