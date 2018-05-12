@@ -15,3 +15,4 @@ Grupo:
 
 <http://rpedroni.com.br/>
 
+formatador: <https://g2384.github.io/work/VHDLformatter.html>
