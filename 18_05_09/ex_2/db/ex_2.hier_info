@@ -1,0 +1,16 @@
+|ex_2
+clock_in => ~NO_FANOUT~
+botao => ~NO_FANOUT~
+start => ~NO_FANOUT~
+leds[0] <= <GND>
+leds[1] <= <GND>
+leds[2] <= <GND>
+leds[3] <= <GND>
+leds[4] <= <GND>
+leds[5] <= <GND>
+leds[6] <= <GND>
+leds[7] <= <GND>
+leds[8] <= <GND>
+leds[9] <= <VCC>
+
+

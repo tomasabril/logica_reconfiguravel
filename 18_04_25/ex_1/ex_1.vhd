@@ -13,8 +13,7 @@ END ex_1;
 ARCHITECTURE ex_1 OF ex_1 IS
 BEGIN
 
-	PROCESS (clock_in)
-		-- clock é de 50_000_000 por segundo?
+	PROCESS (clock_in) --50 MHz, clock é de 50_000_000 por segundo
 		VARIABLE debounce_counter : INTEGER := 0;
 		VARIABLE led_state    : STD_LOGIC := '0';
 	BEGIN
@@ -24,7 +23,7 @@ BEGIN
 				debounce_counter := 0;
 			END IF;
 
-			IF (botao = '1') THEN
+			IF (botao = '0') THEN
 				IF (debounce_counter > 0) THEN
 					debounce_counter := (debounce_counter + 1);
 				END IF;
