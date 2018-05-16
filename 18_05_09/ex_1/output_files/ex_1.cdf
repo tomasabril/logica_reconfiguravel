@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Lógica Reconfigurável/logica_reconfiguravel/18_04_25/ex_2/output_files/") File("ex_2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Lógica Reconfigurável/logica_reconfiguravel/18_05_09/ex_1/output_files/") File("ex_1.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

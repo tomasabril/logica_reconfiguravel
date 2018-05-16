@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="ex_2">
-		<CBX_INST_ENTRY INSTANCE_NAME="|ex_2|lpm_mult:Mult0" CBX_FILE_NAME="mult_i1t.tdf"/>
-	</PROJECT>
-</LOG_ROOT>

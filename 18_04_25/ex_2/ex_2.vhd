@@ -52,7 +52,7 @@ BEGIN
 			END IF;
 
 			-- aumentar tail
-			IF (tail_in = '1' AND tail_size < 9) THEN
+			IF (tail_in = '1' AND tail_size < 8) THEN
 				-- debouncing
 				IF (debounce_counter > 0) THEN
 					debounce_counter := (debounce_counter + 1);
