@@ -18,7 +18,7 @@ BEGIN
 	leds <= std_LOGIC_VECTOR(led_bar);
 
 	PROCESS (clock_in)
-		-- clock é de 50_000_000 por segundo?
+		-- clock é de 50_000_000 por segundo
 		VARIABLE debounce_counter : INTEGER := 0;
 		VARIABLE random 			  : INTEGER := 1;
 	   VARIABLE seed1, seed2: positive;               -- seed values for random generator
