@@ -21,10 +21,10 @@ BEGIN
 		-- clock é de 50_000_000 por segundo
 		VARIABLE debounce_counter : INTEGER := 0;
 		VARIABLE random 			  : INTEGER := 1;
-	   VARIABLE seed1, seed2: positive;               -- seed values for random generator
-      VARIABLE rand: real;   -- random real-number value in range 0 to 1.0 
-	   variable range_of_rand : real := 9.0;    -- the range of random values created will be 0 to +1000.	
-		variable count_pos : INTEGER:=0;
+	  VARIABLE seed1, seed2: positive;               -- seed values for random generator
+    VARIABLE rand: real;   -- random real-number value in range 0 to 1.0 
+	  variable range_of_rand : real := 9.0;    -- the range of random values created will be 0 to +1000.	
+    variable count_pos : INTEGER:=0;
 	BEGIN
 		IF rising_edge(clock_in) THEN
 		
