@@ -31,38 +31,37 @@ ARCHITECTURE ex_2 OF ex_2 IS
 
 BEGIN
 
-	leds <= std_LOGIC_VECTOR(led_bar);
-
 	PROCESS (clock_in)
 		-- clock é de 50_000_000 por segundo
-		VARIABLE debounce_counter : INTEGER := 0;
-		-- state 0=initial 1=active 2=game-over
-		VARIABLE game_state       : INTEGER := 0;
-		VARIABLE current_score    : INTEGER := 0;
-		VARIABLE max_score        : INTEGER := 9;
-		VARIABLE goal_position    : INTEGER := 0;
-		VARIABLE current_pos      : INTEGER := 0;
+		--		VARIABLE debounce_counter : INTEGER := 0;
+		-- state 0=initial 1=active 2=game-over 3=+1score
+		VARIABLE game_state    : INTEGER := 0;
+		VARIABLE current_score : INTEGER := 1;
+		VARIABLE max_score     : INTEGER := 9;
+		VARIABLE goal_position : INTEGER := 2;
+		VARIABLE current_pos   : INTEGER := 0;
 
-		VARIABLE led_speed        : INTEGER := 0;
-		VARIABLE clk_counter      : INTEGER := 0;
+		VARIABLE led_speed     : INTEGER := 0;
+		VARIABLE clk_counter   : INTEGER := 0;
 
-		VARIABLE should_click     : INTEGER := 0;
+		VARIABLE should_click  : INTEGER := 0;
+		--		VARIABLE inc_score_wait   : INTEGER := 0;
 	BEGIN
 		IF rising_edge(clock_in) THEN
 
-			clk_counter := (clk_counter + 1);
+			clk_counter := (clk_counter + 3);
 			led_speed   := (led_speed + 1);
 
-			IF (debounce_counter > 5_000_000) THEN
-				-- 0, 1 segundos
-				debounce_counter := 0;
-			END IF;
+			--			IF (debounce_counter > 5_000_000) THEN
+			--				-- 0, 1 segundos
+			--				debounce_counter := 0;
+			--			END IF;
 
 			-- botao start game
-			IF (start = '1' AND game_state /= 1) THEN
-				game_state := 1;
+			IF (start = '0' AND game_state /= 1) THEN
+				game_state    := 1;
 				-- generate goal position
-				goal_position   := clk_counter MOD 9;
+				goal_position := ((clk_counter MOD 7) + 2);
 			END IF;
 
 			-- game
@@ -71,18 +70,19 @@ BEGIN
 				IF (current_pos = goal_position) THEN
 					should_click := 1;
 				END IF;
-				IF (should_click = 1 AND botao = '1') THEN
+				IF (should_click = 1 AND botao = '0') THEN
 					current_score := (current_score + 1);
 					should_click  := 0;
 					-- force next led position
 					led_speed     := 51_000_000;
+					--					game_state	  := 3;
 				END IF;
 				-- if button not clicked and position changed, game over
 				IF (should_click = 1 AND current_pos /= goal_position) THEN
 					game_state := 2;
 				END IF;
 				-- when pressing button at wrong time
-				IF (current_pos /= goal_position AND botao = '1') THEN
+				IF (current_pos /= goal_position AND botao = '0') THEN
 					--game over
 					game_state := 2;
 				END IF;
@@ -93,9 +93,21 @@ BEGIN
 
 			END IF;
 
+			-- + 1 score state, duration 1 sec
+			--			if (game_state = 3) then
+			--				inc_score_wait := (inc_score_wait + 1);
+			--				led_bar <= "0000000000";
+			--				if(inc_score_wait >= 50_000_000) then
+			--					-- continue game
+			--					game_state := 1;
+			--					inc_score_wait := 0;
+			--				end if;
+			--			end if;
+
 			-- generate next position every x seconds
-			IF (led_speed > (50_000_000 - (current_score * 2_000_000))) THEN
-				current_pos := clk_counter MOD 9;
+			-- - (current_score * 2_000_000))
+			IF (led_speed > 50_000_000) THEN
+				current_pos := (clk_counter MOD 8) + (clk_counter MOD 2);
 				led_speed   := 0;
 			END IF;
 
@@ -119,6 +131,22 @@ BEGIN
 
 		END IF;
 	END PROCESS;
+
+	--led bar
+	leds <= "0000000000" WHEN led_bar = "00000000" ELSE
+		"0000000001" WHEN led_bar = "00001010" ELSE
+		"0000000010" WHEN led_bar = "00001001" ELSE
+		"0000000100" WHEN led_bar = "00001000" ELSE
+		"0000001000" WHEN led_bar = "00000111" ELSE
+		"0000010000" WHEN led_bar = "00000110" ELSE
+		"0000100000" WHEN led_bar = "00000101" ELSE
+		"0001000000" WHEN led_bar = "00000100" ELSE
+		"0010000000" WHEN led_bar = "00000011" ELSE
+		"0100000000" WHEN led_bar = "00000010" ELSE
+		"1000000000" WHEN led_bar = "00000001" ELSE
+		std_LOGIC_VECTOR(led_bar);
+
+	-- ssds
 
 	saidabin1 <= std_LOGIC_VECTOR(to_unsigned(final_score, 8));
 	saidabin2 <= std_LOGIC_VECTOR(to_unsigned(final_goal, 8));
@@ -165,4 +193,3 @@ BEGIN
 		"1111111";
 
 END ARCHITECTURE;
-
