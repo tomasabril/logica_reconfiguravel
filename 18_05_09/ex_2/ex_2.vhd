@@ -62,7 +62,7 @@ BEGIN
 			IF (start = '1' AND game_state /= 1) THEN
 				game_state := 1;
 				-- generate goal position
-				goal_pos   := clk_counter MOD 9;
+				goal_position   := clk_counter MOD 9;
 			END IF;
 
 			-- game
@@ -78,7 +78,7 @@ BEGIN
 					led_speed     := 51_000_000;
 				END IF;
 				-- if button not clicked and position changed, game over
-				IF (should_click = 1 AND current_pos /= goal_pos) THEN
+				IF (should_click = 1 AND current_pos /= goal_position) THEN
 					game_state := 2;
 				END IF;
 				-- when pressing button at wrong time
@@ -101,7 +101,7 @@ BEGIN
 
 			-- reset cock counter every 100 secs
 			IF (clk_counter > 5_000_000_000) THEN
-				clk_couner := 0;
+				clk_counter := 0;
 			END IF;
 
 			-- write on leds
@@ -110,7 +110,7 @@ BEGIN
 				led_bar <= "1111111111";
 			ELSIF (game_state = 1) THEN
 				-- write current pos to leds
-				led_bar <= to_unsigned(current_pos, 9 DOWNTO 0);
+				led_bar <= to_unsigned(current_pos, 10);
 			END IF;
 
 			-- write goal position on ssd
