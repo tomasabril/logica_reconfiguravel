@@ -80,7 +80,7 @@ BEGIN
 			--debug game state
 			debug_gs_s <= to_unsigned(game_state, 3);
 			--debug led_speed
-			IF (clk_counter > 25_000_000) THEN
+			IF (led_speed > 25_000_000) THEN
 				debug_ls_s <= '1';
 			ELSE
 				debug_ls_s <= '0';
@@ -93,13 +93,39 @@ BEGIN
 			--				debounce_counter := 0;
 			--			END IF;
 
+			-- generate next position every x seconds
+			-- - (current_score * 2_000_000))
+			IF (led_speed > (50_000_227 - (current_score * 2_000_000))) THEN
+				current_pos  := clk_counter MOD 9;
+				current_pos  := current_pos + clk_counter2 + clk_counter3;
+				clk_counter2 := clk_counter2 + 1;
+				IF (clk_counter3 = 0) THEN
+					clk_counter3 := 1;
+				ELSE
+					clk_counter3 := 0;
+				END IF;
+				led_speed := 0;
+			END IF;
+			IF (clk_counter2 > 2) THEN
+				clk_counter2 := 0;
+			END IF;
+			
 			-- botao start game
 			IF (start = '0' AND game_state /= 1) THEN
 				game_state    := 1;
 				-- generate goal position
+				goal_position := clk_counter MOD 6;
 				clk_counter   := (clk_counter + 107);
-				goal_position := clk_counter MOD 7;
-				goal_position := goal_position + 1;
+				--goal_position := goal_position + 1;
+				if (goal_position = current_pos) then
+					if(goal_position > 1) then
+						goal_position := goal_position + ( -1);
+					else 
+						goal_position := goal_position + 1;
+					end if;
+				end if;
+				current_score := 0;
+				--current_pos := current_pos + 1;
 			END IF;
 
 			-- game
@@ -142,33 +168,22 @@ BEGIN
 				END IF;
 			END IF;
 
-			-- generate next position every x seconds
-			-- - (current_score * 2_000_000))
-			IF (led_speed > (50_000_227 - (current_score * 2_000_000))) THEN
-				current_pos  := clk_counter MOD 9;
-				current_pos  := current_pos + clk_counter2 + clk_counter3;
-				clk_counter2 := clk_counter2 + 1;
-				IF (clk_counter3 = 0) THEN
-					clk_counter3 := 1;
-				ELSE
-					clk_counter3 := 0;
-				END IF;
-				led_speed := 0;
-			END IF;
-			IF (clk_counter2 > 2) THEN
-				clk_counter2 := 0;
-			END IF;
 
-			-- reset cock counter every 100 secs
-			IF (clk_counter > 55_000_193) THEN
+
+			-- reset cock counter every X secs
+			IF (clk_counter > 950_000_193) THEN
 				clk_counter := 0;
+				if(game_state = 1) then
+					current_pos := goal_position;
+					led_speed := 0;
+				end if;
 			END IF;
 
 			-- write on leds
 			IF (game_state = 2) THEN
 				-- game over
 				led_bar <= "1111111111";
-				current_score := 0;
+				
 			END IF;
 			IF (game_state = 1) THEN
 				-- write current pos to leds
