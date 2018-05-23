@@ -7,6 +7,9 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;
 ENTITY
 	ex_1 IS
+	GENERIC(max: INTEGER :=10;
+	        min: INTEGER :=-257
+	);
 	PORT (
 		clock_in : IN STD_LOGIC;
 		tail_in  : IN STD_LOGIC;
@@ -14,6 +17,7 @@ ENTITY
 		leds     : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);
 		saida0   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 		saida1   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		saida2   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 		neg      : OUT STD_LOGIC
 	);
 END ex_1;
@@ -24,9 +28,10 @@ ARCHITECTURE ex_1 OF ex_1 IS
 	SIGNAL final        : INTEGER;
 	SIGNAL is_neg       : BIT;
 
-	SIGNAL saidabin     : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL saidabin     : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL saidadecbin  : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL saidadecbin2 : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL saidadecbin3 : STD_LOGIC_VECTOR(3 DOWNTO 0);
 BEGIN
 	--leds <= std_LOGIC_VECTOR(led_bar);
 
@@ -50,7 +55,9 @@ BEGIN
 				END IF;
 				IF (debounce_counter = 0) THEN
 					debounce_counter := (debounce_counter + 1);
-					tail_size        := tail_size + 1;
+					if(tail_size < max) then
+						tail_size        := tail_size + 1;
+					end if;
 
 					FOR i IN 0 TO 9 LOOP
 						IF (i      <= tail_size) THEN
@@ -68,7 +75,9 @@ BEGIN
 				END IF;
 				IF (debounce_counter = 0) THEN
 					debounce_counter := (debounce_counter + 1);
-					tail_size        := tail_size - 1;
+					if(tail_size > min) then
+						tail_size        := tail_size - 1;
+					end if;
 					FOR i IN 0 TO 9 LOOP
 						IF (i      <= tail_size) THEN
 							led_bar(i) <= '1';
@@ -95,11 +104,12 @@ BEGIN
 	       '0';
 
 
-	saidabin <= std_LOGIC_VECTOR(to_unsigned(final, 8));
+	saidabin <= std_LOGIC_VECTOR(to_unsigned(final, 12));
 
 	saida_GENERATE_FOR : FOR i IN 0 TO 3 GENERATE
 		saidadecbin(i)  <= saidabin(i);
 		saidadecbin2(i) <= saidabin(i + 4);
+		saidadecbin3(i) <= saidabin(i + 8);
 	END GENERATE saida_GENERATE_FOR;
 
 
@@ -137,6 +147,24 @@ BEGIN
 	          "1000010" WHEN saidadecbin2 = "1101" ELSE
 	          "0110000" WHEN saidadecbin2 = "1110" ELSE
 	          "0111000" WHEN saidadecbin2 = "1111" ELSE
+	          "1111111";
+	
+   saida2 <= "0000001" WHEN saidadecbin3 = "0000" ELSE
+	          "1001111" WHEN saidadecbin3 = "0001" ELSE
+	          "0010010" WHEN saidadecbin3 = "0010" ELSE
+	          "0000110" WHEN saidadecbin3 = "0011" ELSE
+	          "1001100" WHEN saidadecbin3 = "0100" ELSE
+	          "0100100" WHEN saidadecbin3 = "0101" ELSE
+	          "0100000" WHEN saidadecbin3 = "0110" ELSE
+	          "0001111" WHEN saidadecbin3 = "0111" ELSE
+	          "0000000" WHEN saidadecbin3 = "1000" ELSE
+	          "0001100" WHEN saidadecbin3 = "1001" ELSE
+	          "0001000" WHEN saidadecbin3 = "1010" ELSE
+	          "1100000" WHEN saidadecbin3 = "1011" ELSE
+	          "0110001" WHEN saidadecbin3 = "1100" ELSE
+	          "1000010" WHEN saidadecbin3 = "1101" ELSE
+	          "0110000" WHEN saidadecbin3 = "1110" ELSE
+	          "0111000" WHEN saidadecbin3 = "1111" ELSE
 	          "1111111";
 
 END architecture;
