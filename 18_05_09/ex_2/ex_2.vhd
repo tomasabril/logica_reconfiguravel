@@ -47,8 +47,6 @@ BEGIN
 
 	PROCESS (clock_in, reset)
 		-- clock é de 50_000_000 por segundo
-		--		VARIABLE debounce_counter : INTEGER := 0;
-		-- state 0=initial 1=active 2=game-over 3=+1score
 		VARIABLE game_state     : INTEGER;
 		VARIABLE current_score  : INTEGER;
 		VARIABLE max_score      : INTEGER;
@@ -57,8 +55,7 @@ BEGIN
 
 		VARIABLE led_speed      : INTEGER;
 		VARIABLE clk_counter    : INTEGER;
-		VARIABLE clk_counter2   : INTEGER;
-		VARIABLE clk_counter3   : INTEGER;
+		VARIABLE count_to_ten   : INTEGER;
 
 		VARIABLE should_click   : INTEGER;
 		VARIABLE inc_score_wait : INTEGER;
@@ -67,39 +64,41 @@ BEGIN
 		IF rising_edge(clock_in) THEN
 			IF reset = '1' THEN
 				game_state     := 0;
-				current_score  := 1;
+				current_score  := 0;
 				max_score      := 9;
-				goal_position  := 2;
+				goal_position  := 0;
 				led_speed      := 0;
 				clk_counter    := 0;
-				clk_counter2   := 0;
-				clk_counter3   := 0;
+				count_to_ten   := 0;
+
 				should_click   := 0;
 				inc_score_wait := 0;
 			END IF;
 			--debug game state
 			debug_gs_s <= to_unsigned(game_state, 3);
 			--debug led_speed
-			IF (clk_counter > 25_000_000) THEN
+			IF (led_speed > 25_000_000) THEN
 				debug_ls_s <= '1';
 			ELSE
 				debug_ls_s <= '0';
 			END IF;
-			clk_counter := (clk_counter + 1);
-			led_speed   := (led_speed + 1);
+			
+			clk_counter  := (clk_counter + 1);
+			led_speed    := (led_speed + 1);
+			count_to_ten := (count_to_ten + 1);
 
-			--			IF (debounce_counter > 5_000_000) THEN
-			--				-- 0, 1 segundos
-			--				debounce_counter := 0;
-			--			END IF;
+			-- generate next position every x seconds
+			IF (led_speed > (50_000_227 - (current_score * 3_000_000))) THEN
+				current_pos := count_to_ten;
+				led_speed := 0;
+			END IF;
 
 			-- botao start game
 			IF (start = '0' AND game_state /= 1) THEN
 				game_state    := 1;
 				-- generate goal position
-				clk_counter   := (clk_counter + 107);
-				goal_position := clk_counter MOD 7;
-				goal_position := goal_position + 1;
+				goal_position := current_pos + 1;
+				current_score := 0;
 			END IF;
 
 			-- game
@@ -131,48 +130,56 @@ BEGIN
 
 			-- + 1 score state, duration 1 sec
 			IF (game_state = 3) THEN
+			   clk_counter := 0;
 				inc_score_wait := (inc_score_wait + 1);
 				led_bar <= "0000000000";
 				IF (inc_score_wait >= 50_000_000) THEN
 					-- continue game
 					game_state     := 1;
 					inc_score_wait := 0;
+					current_pos := (current_pos + count_to_ten) mod 9;
 					-- force next led position
-					led_speed      := 51_000_000;
+					--led_speed      := 51_000_000;
 				END IF;
 			END IF;
 
-			-- generate next position every x seconds
-			-- - (current_score * 2_000_000))
-			IF (led_speed > (50_000_227 - (current_score * 2_000_000))) THEN
-				current_pos  := clk_counter MOD 9;
-				current_pos  := current_pos + clk_counter2 + clk_counter3;
-				clk_counter2 := clk_counter2 + 1;
-				IF (clk_counter3 = 0) THEN
-					clk_counter3 := 1;
-				ELSE
-					clk_counter3 := 0;
-				END IF;
-				led_speed := 0;
-			END IF;
-			IF (clk_counter2 > 2) THEN
-				clk_counter2 := 0;
-			END IF;
-
-			-- reset cock counter every 100 secs
-			IF (clk_counter > 55_000_193) THEN
+			-- reset clock counter every X secs
+			IF (clk_counter > 950_000_193) THEN
 				clk_counter := 0;
+				IF (game_state = 1) THEN
+					current_pos := goal_position;
+					led_speed   := 0;
+				END IF;
+			END IF;
+
+			-- reset count top pten
+			IF (count_to_ten > 8) THEN
+				count_to_ten := 0;
 			END IF;
 
 			-- write on leds
 			IF (game_state = 2) THEN
 				-- game over
 				led_bar <= "1111111111";
-				current_score := 0;
+
+				--current_score  := 1;
+				--max_score      := 9;
+--				goal_position  := 5;
+				led_speed      := 0;
+				clk_counter    := 0;
+				--count_to_ten   := 0;
+
+				should_click   := 0;
+				--inc_score_wait := 0;				
 			END IF;
 			IF (game_state = 1) THEN
 				-- write current pos to leds
 				led_bar <= to_unsigned(current_pos, 10);
+			END IF;
+			
+			IF (game_state = 0) THEN
+				-- write current pos to leds
+				led_bar <= "1111111111";
 			END IF;
 
 			-- write goal position on ssd
@@ -183,8 +190,8 @@ BEGIN
 	END PROCESS;
 
 	--led bar
-	leds <= 
-	   "0000000000" WHEN led_bar = "0000000000" ELSE
+	leds <=
+		"0000000000" WHEN led_bar = "0000000000" ELSE
 		"0000000001" WHEN led_bar = "0000001010" ELSE
 		"0000000010" WHEN led_bar = "0000001001" ELSE
 		"0000000100" WHEN led_bar = "0000001000" ELSE
@@ -196,7 +203,7 @@ BEGIN
 		"0100000000" WHEN led_bar = "0000000010" ELSE
 		"1000000000" WHEN led_bar = "0000000001" ELSE
 		"1111111111" WHEN led_bar = "1111111111" ELSE
-		"0000000000";
+		"1111111111";
 	--std_LOGIC_VECTOR(led_bar);
 
 	-- ssds

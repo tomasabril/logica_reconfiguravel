@@ -1,13 +1,15 @@
-ï»¿# VHDL - codigos da disciplina 
+<https://github.com/tomasabril/logica_reconfiguravel.git>
 
-### EL68A1 LÃ“GICA RECONFIGURÃVEL 2018-01
+# VHDL - codigos da disciplina 
+
+### EL68A1 LÓGICA RECONFIGURÁVEL 2018-01
 
 Prof. Ricardo Pedroni
 
 Grupo:
 - Allan Patrick
 - Moritz Duarte Pinheiro-Torres Vogt
-- TomÃ¡s Abril
+- Tomás Abril
 
 >Software: Quartus II 13
 
@@ -16,3 +18,4 @@ Grupo:
 <http://rpedroni.com.br/>
 
 formatador: <https://g2384.github.io/VHDLFormatter/>
+
