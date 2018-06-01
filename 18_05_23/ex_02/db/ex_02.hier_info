@@ -1,0 +1,35 @@
+|ex_02
+clock_in => led_bar[0].CLK
+clock_in => led_bar[1].CLK
+clock_in => led_bar[2].CLK
+clock_in => led_bar[3].CLK
+clock_in => led_bar[4].CLK
+clock_in => led_bar[5].CLK
+clock_in => led_bar[6].CLK
+clock_in => led_bar[7].CLK
+clock_in => led_bar[8].CLK
+clock_in => led_bar[9].CLK
+clock_in => bot_still_pressed.CLK
+clock_in => bot.CLK
+clock_in => state~4.DATAIN
+reset => bot.OUTPUTSELECT
+reset => bot_still_pressed.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+bot_raw => bot.OUTPUTSELECT
+bot_raw => bot_still_pressed.OUTPUTSELECT
+bot_raw => bot.OUTPUTSELECT
+bot_raw => bot_still_pressed.OUTPUTSELECT
+leds[0] << led_bar[0].DB_MAX_OUTPUT_PORT_TYPE
+leds[1] << led_bar[1].DB_MAX_OUTPUT_PORT_TYPE
+leds[2] << led_bar[2].DB_MAX_OUTPUT_PORT_TYPE
+leds[3] << led_bar[3].DB_MAX_OUTPUT_PORT_TYPE
+leds[4] << led_bar[4].DB_MAX_OUTPUT_PORT_TYPE
+leds[5] << led_bar[5].DB_MAX_OUTPUT_PORT_TYPE
+leds[6] << led_bar[6].DB_MAX_OUTPUT_PORT_TYPE
+leds[7] << led_bar[7].DB_MAX_OUTPUT_PORT_TYPE
+leds[8] << led_bar[8].DB_MAX_OUTPUT_PORT_TYPE
+leds[9] << led_bar[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
