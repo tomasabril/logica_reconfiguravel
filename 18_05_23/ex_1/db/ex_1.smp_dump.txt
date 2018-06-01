@@ -1,6 +1,7 @@
 
 State Machine - |ex_1|pr_state
-Name pr_state.C pr_state.B pr_state.A 
-pr_state.A 0 0 0 
-pr_state.B 0 1 1 
-pr_state.C 1 0 1 
+Name pr_state.C pr_state.B pr_state.A pr_state.I 
+pr_state.I 0 0 0 0 
+pr_state.A 0 0 1 1 
+pr_state.B 0 1 0 1 
+pr_state.C 1 0 0 1 

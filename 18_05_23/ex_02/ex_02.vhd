@@ -15,12 +15,12 @@ ENTITY
     -- interface do operador
 		bot_raw      : IN STD_LOGIC;
     -- para mostrar qual sinal esta aberto
-		leds     : OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
+		leds     : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);
     -- displays
 		saida0   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
     -- debug
     reset_ativo: out STD_LOGIC;
-    botao_ativo: out STD_LOGIC;
+    botao_ativo: out STD_LOGIC
 	);
 END ex_02;
 
@@ -43,9 +43,7 @@ BEGIN
   variable bot : boolean;
   variable bot_still_pressed : boolean;
   variable debounce_counter : integer;
-
-	begin
-
+	BEGIN
 		IF rising_edge(clock_in) then
 
 			IF reset = '1' THEN
@@ -75,25 +73,25 @@ BEGIN
         botao_ativo <= '0';
       end if;
 
-
+[  ]
       case state is
         when init =>
           led_bar <= "1111001111";
           state   <= s1;
-          final := 0;
+          final <= 0;
         when s1 =>
           led_bar <= "1111000000";
           if (bot = false) then
             -- botao pressionado
             state <= s2;
-            final := 1;
+            final <= 1;
           end if;
         when s2 =>
           led_bar <= "0000001111";
           if (bot = false) then
             -- botao pressionado
             state <= s1;
-            final := 2;
+            final <= 2;
           end if;
       end case;
 

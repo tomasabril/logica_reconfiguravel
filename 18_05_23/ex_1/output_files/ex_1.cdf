@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/output_files/") File("ex_1.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/output_files/") File("ex_1.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ex_1
-Thu May 31 22:10:17 2018
+Fri Jun 01 03:10:22 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 31 22:10:17 2018 ;
+; EDA Netlist Writer Status ; Successful - Fri Jun 01 03:10:22 2018 ;
 ; Revision Name             ; ex_1                                  ;
 ; Top-level Entity Name     ; ex_1                                  ;
 ; Family                    ; Cyclone III                           ;
@@ -66,20 +66,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                  ;
-+-------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                             ;
-+-------------------------------------------------------------------------------------------------------------+
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_6_1200mv_85c_slow.vho      ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_6_1200mv_0c_slow.vho       ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_min_1200mv_0c_fast.vho     ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1.vho                        ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_6_1200mv_85c_vhd_slow.sdo  ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_6_1200mv_0c_vhd_slow.sdo   ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_min_1200mv_0c_vhd_fast.sdo ;
-; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/ex_1_vhd.sdo                    ;
-+-------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                       ;
++------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                  ;
++------------------------------------------------------------------------------------------------------------------+
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_6_1200mv_85c_slow.vho      ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_6_1200mv_0c_slow.vho       ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_min_1200mv_0c_fast.vho     ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1.vho                        ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_6_1200mv_85c_vhd_slow.sdo  ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_6_1200mv_0c_vhd_slow.sdo   ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_min_1200mv_0c_vhd_fast.sdo ;
+; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/ex_1_vhd.sdo                    ;
++------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,19 +88,19 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu May 31 22:10:16 2018
+    Info: Processing started: Fri Jun 01 03:10:21 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ex_1 -c ex_1
-Info (204019): Generated file ex_1_6_1200mv_85c_slow.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_6_1200mv_0c_slow.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_min_1200mv_0c_fast.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ex_1_vhd.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_6_1200mv_85c_slow.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_6_1200mv_0c_slow.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_min_1200mv_0c_fast.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1.vho in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ex_1_vhd.sdo in folder "C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_05_23/ex_1/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4577 megabytes
-    Info: Processing ended: Thu May 31 22:10:17 2018
+    Info: Peak virtual memory: 4581 megabytes
+    Info: Processing ended: Fri Jun 01 03:10:22 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

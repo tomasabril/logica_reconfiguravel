@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ex_02
-Thu May 31 23:42:45 2018
+Fri Jun 01 01:29:56 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -134,7 +134,7 @@ applicable agreement for further details.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 728.86 MHz ; 250.0 MHz       ; clock_in   ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 602.41 MHz ; 250.0 MHz       ; clock_in   ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -150,7 +150,7 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; clock_in ; -0.372 ; -0.743          ;
+; clock_in ; -0.660 ; -1.960          ;
 +----------+--------+-----------------+
 
 
@@ -159,7 +159,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; clock_in ; 0.359 ; 0.000           ;
+; clock_in ; 0.362 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -180,7 +180,7 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; clock_in ; -3.000 ; -14.000                       ;
+; clock_in ; -3.000 ; -18.000                       ;
 +----------+--------+-------------------------------+
 
 
@@ -189,20 +189,27 @@ No paths to report.
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; -0.372 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.306      ;
-; -0.371 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.305      ;
-; -0.192 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.126      ;
-; -0.089 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.023      ;
-; 0.085  ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.849      ;
-; 0.085  ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.849      ;
-; 0.086  ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.848      ;
-; 0.089  ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.845      ;
-; 0.099  ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.835      ;
-; 0.102  ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.832      ;
-; 0.102  ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.832      ;
-; 0.103  ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.831      ;
+; -0.660 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.594      ;
+; -0.660 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.594      ;
+; -0.503 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.437      ;
+; -0.503 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.437      ;
+; -0.404 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.338      ;
+; -0.332 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.266      ;
+; -0.236 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.170      ;
+; -0.104 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.038      ;
+; -0.072 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 1.006      ;
+; 0.038  ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.896      ;
+; 0.079  ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.855      ;
+; 0.081  ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.853      ;
+; 0.083  ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.851      ;
+; 0.098  ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 1.000        ; -0.062     ; 0.835      ;
+; 0.190  ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.744      ;
+; 0.191  ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.743      ;
+; 0.195  ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.739      ;
+; 0.195  ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.739      ;
+; 0.200  ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.734      ;
+; 0.275  ; state.init        ; state.init ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.659      ;
 ; 0.275  ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.659      ;
-; 0.297  ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.061     ; 0.637      ;
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -211,20 +218,27 @@ No paths to report.
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; 0.359 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.577      ;
+; 0.362 ; state.init        ; state.init ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.580      ;
 ; 0.362 ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.580      ;
-; 0.503 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.721      ;
-; 0.503 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.721      ;
-; 0.504 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.722      ;
-; 0.505 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.723      ;
-; 0.517 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.735      ;
-; 0.519 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.737      ;
-; 0.519 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.737      ;
-; 0.520 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.738      ;
-; 0.603 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.821      ;
-; 0.685 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.903      ;
-; 0.688 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.906      ;
-; 0.724 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.942      ;
+; 0.406 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.624      ;
+; 0.406 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.624      ;
+; 0.407 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.625      ;
+; 0.409 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.627      ;
+; 0.411 ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.629      ;
+; 0.524 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.742      ;
+; 0.525 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.743      ;
+; 0.526 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.744      ;
+; 0.528 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.746      ;
+; 0.567 ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.785      ;
+; 0.632 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.850      ;
+; 0.642 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 0.860      ;
+; 0.841 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.059      ;
+; 0.855 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.073      ;
+; 0.929 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.147      ;
+; 1.216 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.434      ;
+; 1.216 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.434      ;
+; 1.340 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.558      ;
+; 1.340 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.061      ; 1.558      ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -235,6 +249,8 @@ No paths to report.
 +--------+--------------+----------------+------------------+----------+------------+--------------------------------+
 ; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_in ; Rise       ; clock_in                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; bot_still_pressed              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[0]                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[1]                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[0]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[1]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[2]                     ;
@@ -243,9 +259,13 @@ No paths to report.
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[7]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[8]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.init                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s1                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s2                       ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed              ;
+; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]                       ;
+; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]                       ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]                     ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]                     ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]                     ;
@@ -254,38 +274,50 @@ No paths to report.
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]                     ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]                     ;
+; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.init                     ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1                       ;
 ; 0.188  ; 0.372        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2                       ;
 ; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~input|o               ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]|clk                   ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]|clk                 ;
-; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.init|clk                 ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1|clk                   ;
 ; 0.350  ; 0.350        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2|clk                   ;
 ; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
 ; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~inputclkctrl|outclk   ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed              ;
+; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[0]                       ;
+; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[1]                       ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[3]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[6]                     ;
-; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]                     ;
+; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.init                     ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s1                       ;
 ; 0.410  ; 0.626        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s2                       ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|i               ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~input|i               ;
 ; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
 ; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|outclk   ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[1]|clk                   ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]|clk                 ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]|clk                 ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]|clk                 ;
@@ -294,6 +326,8 @@ No paths to report.
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]|clk                 ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.init|clk                 ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s1|clk                   ;
 ; 0.650  ; 0.650        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s2|clk                   ;
 ; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|o               ;
@@ -305,8 +339,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; bot_raw   ; clock_in   ; 2.086 ; 2.469 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; 1.874 ; 2.336 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; 2.364 ; 2.834 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; 2.058 ; 2.462 ; Rise       ; clock_in        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -315,43 +349,59 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; bot_raw   ; clock_in   ; -1.093 ; -1.486 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; -1.284 ; -1.673 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; -1.146 ; -1.562 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; -0.733 ; -1.128 ; Rise       ; clock_in        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 6.723 ; 6.895 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 5.538 ; 5.617 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 5.534 ; 5.593 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 6.723 ; 6.895 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 5.522 ; 5.582 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 5.536 ; 5.591 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 5.521 ; 5.572 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 5.522 ; 5.577 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 5.527 ; 5.586 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 6.685 ; 6.846 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 5.499 ; 5.555 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 5.499 ; 5.562 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 6.685 ; 6.846 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 5.531 ; 5.595 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 5.538 ; 5.566 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 5.726 ; 5.758 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 5.571 ; 5.634 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 5.548 ; 5.602 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 5.441 ; 5.478 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 7.232 ; 7.239 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 6.094 ; 6.062 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 7.232 ; 7.239 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 5.987 ; 5.929 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 6.885 ; 6.688 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 6.775 ; 6.813 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 6.889 ; 6.695 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 5.412 ; 5.461 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 5.427 ; 5.502 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 5.423 ; 5.480 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 6.613 ; 6.782 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 5.413 ; 5.470 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 5.427 ; 5.479 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 5.412 ; 5.461 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 5.414 ; 5.465 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 5.418 ; 5.474 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 5.389 ; 5.443 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 5.389 ; 5.443 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 5.390 ; 5.449 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 6.576 ; 6.735 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 5.421 ; 5.482 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 5.429 ; 5.455 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 5.609 ; 5.639 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 5.460 ; 5.521 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 5.438 ; 5.490 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 5.331 ; 5.365 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 5.850 ; 5.796 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 5.953 ; 5.924 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 7.034 ; 6.851 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 5.850 ; 5.796 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 6.610 ; 6.430 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 6.518 ; 6.577 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 6.614 ; 6.435 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
 ----------------------------------------------
@@ -360,13 +410,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                        ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
-; 815.0 MHz ; 250.0 MHz       ; clock_in   ; limit due to minimum period restriction (max I/O toggle rate) ;
-+-----------+-----------------+------------+---------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 666.22 MHz ; 250.0 MHz       ; clock_in   ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -375,7 +425,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; clock_in ; -0.227 ; -0.454         ;
+; clock_in ; -0.501 ; -1.364         ;
 +----------+--------+----------------+
 
 
@@ -384,7 +434,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; clock_in ; 0.312 ; 0.000          ;
+; clock_in ; 0.320 ; 0.000          ;
 +----------+-------+----------------+
 
 
@@ -405,7 +455,7 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; clock_in ; -3.000 ; -14.000                      ;
+; clock_in ; -3.000 ; -18.000                      ;
 +----------+--------+------------------------------+
 
 
@@ -414,20 +464,27 @@ No paths to report.
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; -0.227 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.167      ;
-; -0.227 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.167      ;
-; -0.058 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.998      ;
-; 0.030  ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.910      ;
-; 0.176  ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.764      ;
-; 0.176  ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.764      ;
-; 0.177  ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.763      ;
-; 0.180  ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.760      ;
-; 0.188  ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.752      ;
-; 0.189  ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.751      ;
+; -0.501 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.441      ;
+; -0.501 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.441      ;
+; -0.359 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.299      ;
+; -0.359 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.299      ;
+; -0.256 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.196      ;
+; -0.197 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.137      ;
+; -0.106 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 1.046      ;
+; 0.020  ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.920      ;
+; 0.047  ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.893      ;
+; 0.138  ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.802      ;
+; 0.171  ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.769      ;
+; 0.173  ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.767      ;
+; 0.173  ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.767      ;
 ; 0.191  ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.749      ;
-; 0.192  ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.748      ;
+; 0.271  ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.669      ;
+; 0.273  ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.667      ;
+; 0.276  ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.664      ;
+; 0.277  ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.663      ;
+; 0.281  ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.659      ;
+; 0.357  ; state.init        ; state.init ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.583      ;
 ; 0.357  ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.583      ;
-; 0.378  ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.055     ; 0.562      ;
 +--------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -436,20 +493,27 @@ No paths to report.
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; 0.312 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.511      ;
+; 0.320 ; state.init        ; state.init ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.519      ;
 ; 0.320 ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.519      ;
-; 0.443 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.642      ;
-; 0.444 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.643      ;
-; 0.445 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.644      ;
-; 0.446 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.645      ;
-; 0.456 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.655      ;
-; 0.458 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.657      ;
-; 0.459 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.658      ;
-; 0.459 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.658      ;
-; 0.536 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.735      ;
-; 0.610 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.809      ;
-; 0.613 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.812      ;
-; 0.665 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.864      ;
+; 0.351 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.550      ;
+; 0.362 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.561      ;
+; 0.362 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.561      ;
+; 0.364 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.563      ;
+; 0.365 ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.564      ;
+; 0.461 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.660      ;
+; 0.462 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.661      ;
+; 0.463 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.662      ;
+; 0.484 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.054      ; 0.682      ;
+; 0.506 ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.705      ;
+; 0.561 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.760      ;
+; 0.574 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.773      ;
+; 0.756 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.955      ;
+; 0.773 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 0.972      ;
+; 0.835 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 1.034      ;
+; 1.099 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 1.298      ;
+; 1.099 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 1.298      ;
+; 1.211 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 1.410      ;
+; 1.211 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.055      ; 1.410      ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -460,6 +524,8 @@ No paths to report.
 +--------+--------------+----------------+------------------+----------+------------+--------------------------------+
 ; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_in ; Rise       ; clock_in                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; bot_still_pressed              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[0]                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[1]                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[0]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[1]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[2]                     ;
@@ -468,34 +534,46 @@ No paths to report.
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[7]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[8]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.init                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s1                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s2                       ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed              ;
+; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]                       ;
+; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]                       ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]                     ;
-; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]                     ;
+; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.init                     ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1                       ;
 ; 0.184  ; 0.368        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2                       ;
+; 0.185  ; 0.369        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~input|o               ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]|clk                   ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]|clk                 ;
-; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.init|clk                 ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1|clk                   ;
 ; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2|clk                   ;
+; 0.345  ; 0.345        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
 ; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~inputclkctrl|outclk   ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed              ;
+; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[0]                       ;
+; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[1]                       ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]                     ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]                     ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]                     ;
@@ -504,6 +582,8 @@ No paths to report.
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]                     ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]                     ;
+; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.init                     ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s1                       ;
 ; 0.415  ; 0.631        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s2                       ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|i               ;
@@ -511,6 +591,8 @@ No paths to report.
 ; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
 ; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|outclk   ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[1]|clk                   ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]|clk                 ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]|clk                 ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]|clk                 ;
@@ -519,6 +601,8 @@ No paths to report.
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]|clk                 ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.init|clk                 ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s1|clk                   ;
 ; 0.655  ; 0.655        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s2|clk                   ;
 ; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|o               ;
@@ -530,8 +614,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; bot_raw   ; clock_in   ; 1.778 ; 2.113 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; 1.581 ; 1.977 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; 2.038 ; 2.429 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; 1.755 ; 2.106 ; Rise       ; clock_in        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -540,43 +624,59 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; bot_raw   ; clock_in   ; -0.893 ; -1.242 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; -1.055 ; -1.397 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; -0.937 ; -1.297 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; -0.557 ; -0.904 ; Rise       ; clock_in        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 6.456 ; 6.605 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 5.270 ; 5.325 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 5.267 ; 5.303 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 6.456 ; 6.605 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 5.256 ; 5.292 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 5.270 ; 5.297 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 5.258 ; 5.279 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 5.259 ; 5.280 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 5.263 ; 5.291 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 6.422 ; 6.550 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 5.234 ; 5.262 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 5.235 ; 5.264 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 6.422 ; 6.550 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 5.263 ; 5.297 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 5.272 ; 5.288 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 5.453 ; 5.439 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 5.303 ; 5.335 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 5.281 ; 5.308 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 5.173 ; 5.180 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 6.828 ; 6.742 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 5.721 ; 5.758 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 6.828 ; 6.742 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 5.631 ; 5.623 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 6.450 ; 6.313 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 6.414 ; 6.358 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 6.453 ; 6.318 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 5.157 ; 5.180 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 5.171 ; 5.223 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 5.168 ; 5.202 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 6.358 ; 6.504 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 5.157 ; 5.191 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 5.172 ; 5.197 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 5.160 ; 5.180 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 5.161 ; 5.181 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 5.166 ; 5.192 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 5.136 ; 5.162 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 5.136 ; 5.162 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 5.137 ; 5.164 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 6.325 ; 6.452 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 5.164 ; 5.197 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 5.173 ; 5.189 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 5.349 ; 5.335 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 5.204 ; 5.234 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 5.183 ; 5.208 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 5.075 ; 5.079 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 5.509 ; 5.503 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 5.595 ; 5.633 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 6.621 ; 6.443 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 5.509 ; 5.503 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 6.215 ; 6.062 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 6.162 ; 6.157 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 6.217 ; 6.066 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
 ---------------------------------------------
@@ -590,7 +690,7 @@ No synchronizer chains to report.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; clock_in ; 0.248 ; 0.000           ;
+; clock_in ; 0.082 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -599,7 +699,7 @@ No synchronizer chains to report.
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; clock_in ; 0.188 ; 0.000          ;
+; clock_in ; 0.195 ; 0.000          ;
 +----------+-------+----------------+
 
 
@@ -620,7 +720,7 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; clock_in ; -3.000 ; -14.605                      ;
+; clock_in ; -3.000 ; -18.840                      ;
 +----------+--------+------------------------------+
 
 
@@ -629,20 +729,27 @@ No paths to report.
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; 0.248 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.704      ;
-; 0.248 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.704      ;
-; 0.330 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.622      ;
-; 0.385 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.567      ;
-; 0.493 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.459      ;
-; 0.493 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.459      ;
-; 0.498 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.454      ;
-; 0.501 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.451      ;
-; 0.503 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.449      ;
-; 0.503 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.449      ;
-; 0.505 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.447      ;
-; 0.507 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.445      ;
+; 0.082 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.870      ;
+; 0.082 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.870      ;
+; 0.176 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.776      ;
+; 0.176 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.776      ;
+; 0.222 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.730      ;
+; 0.269 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.683      ;
+; 0.316 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.636      ;
+; 0.380 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.572      ;
+; 0.394 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.558      ;
+; 0.475 ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.477      ;
+; 0.493 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.459      ;
+; 0.494 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.458      ;
+; 0.494 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.458      ;
+; 0.498 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 1.000        ; -0.036     ; 0.453      ;
+; 0.547 ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.405      ;
+; 0.549 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.403      ;
+; 0.552 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.400      ;
+; 0.552 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.400      ;
+; 0.557 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.395      ;
+; 0.593 ; state.init        ; state.init ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.359      ;
 ; 0.593 ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.359      ;
-; 0.602 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 1.000        ; -0.035     ; 0.350      ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -651,20 +758,27 @@ No paths to report.
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
-; 0.188 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.307      ;
+; 0.195 ; state.init        ; state.init ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.314      ;
 ; 0.195 ; state.s1          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.314      ;
-; 0.270 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.389      ;
-; 0.271 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.390      ;
-; 0.271 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.390      ;
-; 0.275 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.394      ;
-; 0.279 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.398      ;
-; 0.282 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.401      ;
-; 0.282 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.401      ;
-; 0.283 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.402      ;
-; 0.328 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.447      ;
-; 0.372 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.491      ;
-; 0.375 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.494      ;
-; 0.382 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.501      ;
+; 0.217 ; state.s1          ; led_bar[1] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.336      ;
+; 0.219 ; state.s1          ; led_bar[0] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.338      ;
+; 0.223 ; state.s1          ; led_bar[2] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.342      ;
+; 0.224 ; state.s1          ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.343      ;
+; 0.224 ; state.s1          ; led_bar[3] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.343      ;
+; 0.277 ; state.s2          ; led_bar[7] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.396      ;
+; 0.282 ; state.s2          ; led_bar[9] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.401      ;
+; 0.282 ; state.s2          ; led_bar[8] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.401      ;
+; 0.285 ; state.s2          ; led_bar[6] ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.404      ;
+; 0.300 ; state.s2          ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.419      ;
+; 0.338 ; state.s2          ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.457      ;
+; 0.346 ; state.s1          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.465      ;
+; 0.450 ; bot_still_pressed ; state.s1   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.569      ;
+; 0.454 ; bot_still_pressed ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.573      ;
+; 0.498 ; state.s2          ; state.s2   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.617      ;
+; 0.663 ; state.init        ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.782      ;
+; 0.663 ; state.init        ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.782      ;
+; 0.722 ; bot_still_pressed ; final[1]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.841      ;
+; 0.722 ; bot_still_pressed ; final[0]   ; clock_in     ; clock_in    ; 0.000        ; 0.035      ; 0.841      ;
 +-------+-------------------+------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -675,6 +789,8 @@ No paths to report.
 +--------+--------------+----------------+------------------+----------+------------+--------------------------------+
 ; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_in ; Rise       ; clock_in                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; bot_still_pressed              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[0]                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; final[1]                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[0]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[1]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[2]                     ;
@@ -683,29 +799,39 @@ No paths to report.
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[7]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[8]                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; led_bar[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.init                     ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s1                       ;
 ; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_in ; Rise       ; state.s2                       ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed              ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]                     ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1                       ;
-; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2                       ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed              ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]                       ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]                       ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.init                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1                       ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2                       ;
 ; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~input|o               ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; final[1]|clk                   ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[0]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[1]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[2]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[3]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[6]|clk                 ;
-; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[7]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[8]|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.init|clk                 ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s1|clk                   ;
 ; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; state.s2|clk                   ;
 ; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
@@ -713,29 +839,37 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|i               ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_in ; Rise       ; clock_in~input|i               ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed              ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[0]                       ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; final[1]                       ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[3]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[6]                     ;
-; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]                     ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0               ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.init                     ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s1                       ;
 ; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; state.s2                       ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]                     ;
 ; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|inclk[0] ;
 ; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~inputclkctrl|outclk   ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed|clk          ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[3]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[6]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]|clk                 ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s1|clk                   ;
-; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s2|clk                   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; bot_still_pressed|clk          ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[0]|clk                   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; final[1]|clk                   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[0]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[1]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[2]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[3]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[6]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[7]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[8]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; led_bar[9]|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; reset_ativo~reg0|clk           ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.init|clk                 ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s1|clk                   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; state.s2|clk                   ;
 ; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; clock_in ; Rise       ; clock_in~input|o               ;
 +--------+--------------+----------------+------------------+----------+------------+--------------------------------+
 
@@ -745,8 +879,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; bot_raw   ; clock_in   ; 1.165 ; 1.692 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; 1.020 ; 1.610 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; 1.308 ; 1.903 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; 1.121 ; 1.663 ; Rise       ; clock_in        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -755,43 +889,59 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; bot_raw   ; clock_in   ; -0.604 ; -1.150 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; -0.691 ; -1.224 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; -0.637 ; -1.185 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; -0.385 ; -0.928 ; Rise       ; clock_in        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 4.161 ; 4.369 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 3.373 ; 3.431 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 3.369 ; 3.420 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 4.161 ; 4.369 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 3.349 ; 3.412 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 3.381 ; 3.422 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 3.375 ; 3.412 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 3.376 ; 3.415 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 3.381 ; 3.422 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 4.149 ; 4.335 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 3.349 ; 3.392 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 3.347 ; 3.390 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 4.149 ; 4.335 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 3.369 ; 3.417 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 3.376 ; 3.412 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 3.463 ; 3.524 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 3.405 ; 3.451 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 3.393 ; 3.434 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 3.252 ; 3.335 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 4.277 ; 4.391 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 3.688 ; 3.574 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 4.277 ; 4.391 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 3.641 ; 3.536 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 4.119 ; 3.980 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 3.973 ; 4.128 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 4.117 ; 3.979 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 3.286 ; 3.345 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 3.308 ; 3.363 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 3.304 ; 3.353 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 4.097 ; 4.302 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 3.286 ; 3.345 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 3.317 ; 3.356 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 3.311 ; 3.347 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 3.313 ; 3.349 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 3.318 ; 3.356 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 3.284 ; 3.324 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 3.285 ; 3.325 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 3.284 ; 3.324 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 4.086 ; 4.270 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 3.305 ; 3.350 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 3.313 ; 3.347 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 3.395 ; 3.454 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 3.341 ; 3.384 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 3.329 ; 3.368 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 3.188 ; 3.268 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 3.559 ; 3.459 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 3.604 ; 3.495 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 4.102 ; 4.096 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 3.559 ; 3.459 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 3.942 ; 3.836 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 3.836 ; 3.973 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 3.940 ; 3.835 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
 ---------------------------------------------
@@ -805,10 +955,10 @@ No synchronizer chains to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.372 ; 0.188 ; N/A      ; N/A     ; -3.000              ;
-;  clock_in        ; -0.372 ; 0.188 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -0.743 ; 0.0   ; 0.0      ; 0.0     ; -14.605             ;
-;  clock_in        ; -0.743 ; 0.000 ; N/A      ; N/A     ; -14.605             ;
+; Worst-case Slack ; -0.660 ; 0.195 ; N/A      ; N/A     ; -3.000              ;
+;  clock_in        ; -0.660 ; 0.195 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -1.96  ; 0.0   ; 0.0      ; 0.0     ; -18.84              ;
+;  clock_in        ; -1.960 ; 0.000 ; N/A      ; N/A     ; -18.840             ;
 +------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -817,8 +967,8 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; bot_raw   ; clock_in   ; 2.086 ; 2.469 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; 1.874 ; 2.336 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; 2.364 ; 2.834 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; 2.058 ; 2.462 ; Rise       ; clock_in        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -827,43 +977,59 @@ No synchronizer chains to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; bot_raw   ; clock_in   ; -0.604 ; -1.150 ; Rise       ; clock_in        ;
-; reset     ; clock_in   ; -0.691 ; -1.224 ; Rise       ; clock_in        ;
+; bot_raw   ; clock_in   ; -0.637 ; -1.185 ; Rise       ; clock_in        ;
+; reset     ; clock_in   ; -0.385 ; -0.904 ; Rise       ; clock_in        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 6.723 ; 6.895 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 5.538 ; 5.617 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 5.534 ; 5.593 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 6.723 ; 6.895 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 5.522 ; 5.582 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 5.536 ; 5.591 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 5.521 ; 5.572 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 5.522 ; 5.577 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 5.527 ; 5.586 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 6.685 ; 6.846 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 5.499 ; 5.555 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 5.499 ; 5.562 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 6.685 ; 6.846 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 5.531 ; 5.595 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 5.538 ; 5.566 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 5.726 ; 5.758 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 5.571 ; 5.634 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 5.548 ; 5.602 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 5.441 ; 5.478 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 7.232 ; 7.239 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 6.094 ; 6.062 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 7.232 ; 7.239 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 5.987 ; 5.929 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 6.885 ; 6.688 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 6.775 ; 6.813 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 6.889 ; 6.695 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; leds[*]   ; clock_in   ; 3.286 ; 3.345 ; Rise       ; clock_in        ;
-;  leds[0]  ; clock_in   ; 3.308 ; 3.363 ; Rise       ; clock_in        ;
-;  leds[1]  ; clock_in   ; 3.304 ; 3.353 ; Rise       ; clock_in        ;
-;  leds[2]  ; clock_in   ; 4.097 ; 4.302 ; Rise       ; clock_in        ;
-;  leds[3]  ; clock_in   ; 3.286 ; 3.345 ; Rise       ; clock_in        ;
-;  leds[6]  ; clock_in   ; 3.317 ; 3.356 ; Rise       ; clock_in        ;
-;  leds[7]  ; clock_in   ; 3.311 ; 3.347 ; Rise       ; clock_in        ;
-;  leds[8]  ; clock_in   ; 3.313 ; 3.349 ; Rise       ; clock_in        ;
-;  leds[9]  ; clock_in   ; 3.318 ; 3.356 ; Rise       ; clock_in        ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; leds[*]     ; clock_in   ; 3.284 ; 3.324 ; Rise       ; clock_in        ;
+;  leds[0]    ; clock_in   ; 3.285 ; 3.325 ; Rise       ; clock_in        ;
+;  leds[1]    ; clock_in   ; 3.284 ; 3.324 ; Rise       ; clock_in        ;
+;  leds[2]    ; clock_in   ; 4.086 ; 4.270 ; Rise       ; clock_in        ;
+;  leds[3]    ; clock_in   ; 3.305 ; 3.350 ; Rise       ; clock_in        ;
+;  leds[6]    ; clock_in   ; 3.313 ; 3.347 ; Rise       ; clock_in        ;
+;  leds[7]    ; clock_in   ; 3.395 ; 3.454 ; Rise       ; clock_in        ;
+;  leds[8]    ; clock_in   ; 3.341 ; 3.384 ; Rise       ; clock_in        ;
+;  leds[9]    ; clock_in   ; 3.329 ; 3.368 ; Rise       ; clock_in        ;
+; reset_ativo ; clock_in   ; 3.188 ; 3.268 ; Rise       ; clock_in        ;
+; saida0[*]   ; clock_in   ; 3.559 ; 3.459 ; Rise       ; clock_in        ;
+;  saida0[0]  ; clock_in   ; 3.604 ; 3.495 ; Rise       ; clock_in        ;
+;  saida0[1]  ; clock_in   ; 4.102 ; 4.096 ; Rise       ; clock_in        ;
+;  saida0[2]  ; clock_in   ; 3.559 ; 3.459 ; Rise       ; clock_in        ;
+;  saida0[3]  ; clock_in   ; 3.942 ; 3.836 ; Rise       ; clock_in        ;
+;  saida0[4]  ; clock_in   ; 3.836 ; 3.973 ; Rise       ; clock_in        ;
+;  saida0[6]  ; clock_in   ; 3.940 ; 3.835 ; Rise       ; clock_in        ;
++-------------+------------+-------+-------+------------+-----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -881,6 +1047,15 @@ No synchronizer chains to report.
 ; leds[7]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; leds[8]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; leds[9]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[4]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[5]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; saida0[6]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; reset_ativo   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; botao_ativo   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -892,8 +1067,8 @@ No synchronizer chains to report.
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
 ; clock_in                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; bot_raw                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -915,6 +1090,15 @@ No synchronizer chains to report.
 ; leds[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.25e-07 V                   ; 2.35 V              ; -0.0111 V           ; 0.113 V                              ; 0.035 V                              ; 7.76e-10 s                  ; 8.04e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.25e-07 V                  ; 2.35 V             ; -0.0111 V          ; 0.113 V                             ; 0.035 V                             ; 7.76e-10 s                 ; 8.04e-10 s                 ; Yes                       ; Yes                       ;
 ; leds[8]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.25e-07 V                   ; 2.35 V              ; -0.0111 V           ; 0.113 V                              ; 0.035 V                              ; 7.76e-10 s                  ; 8.04e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.25e-07 V                  ; 2.35 V             ; -0.0111 V          ; 0.113 V                             ; 0.035 V                             ; 7.76e-10 s                 ; 8.04e-10 s                 ; Yes                       ; Yes                       ;
 ; leds[9]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.25e-07 V                   ; 2.35 V              ; -0.0111 V           ; 0.113 V                              ; 0.035 V                              ; 7.76e-10 s                  ; 8.04e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.25e-07 V                  ; 2.35 V             ; -0.0111 V          ; 0.113 V                             ; 0.035 V                             ; 7.76e-10 s                 ; 8.04e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; reset_ativo   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.25e-07 V                   ; 2.36 V              ; -0.00946 V          ; 0.111 V                              ; 0.027 V                              ; 6.46e-10 s                  ; 6.2e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 7.25e-07 V                  ; 2.36 V             ; -0.00946 V         ; 0.111 V                             ; 0.027 V                             ; 6.46e-10 s                 ; 6.2e-10 s                  ; Yes                       ; Yes                       ;
+; botao_ativo   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.68e-07 V                   ; 2.35 V              ; -0.0132 V           ; 0.2 V                                ; 0.027 V                              ; 5.26e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.68e-07 V                  ; 2.35 V             ; -0.0132 V          ; 0.2 V                               ; 0.027 V                             ; 5.26e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.36e-07 V                   ; 2.35 V              ; -0.00444 V          ; 0.18 V                               ; 0.019 V                              ; 7.23e-10 s                  ; 9.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.36e-07 V                  ; 2.35 V             ; -0.00444 V         ; 0.18 V                              ; 0.019 V                             ; 7.23e-10 s                 ; 9.82e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -935,6 +1119,15 @@ No synchronizer chains to report.
 ; leds[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0349 V           ; 0.253 V                              ; 0.069 V                              ; 4.96e-10 s                  ; 5.19e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0349 V          ; 0.253 V                             ; 0.069 V                             ; 4.96e-10 s                 ; 5.19e-10 s                 ; No                        ; Yes                       ;
 ; leds[8]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0349 V           ; 0.253 V                              ; 0.069 V                              ; 4.96e-10 s                  ; 5.19e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0349 V          ; 0.253 V                             ; 0.069 V                             ; 4.96e-10 s                 ; 5.19e-10 s                 ; No                        ; Yes                       ;
 ; leds[9]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0349 V           ; 0.253 V                              ; 0.069 V                              ; 4.96e-10 s                  ; 5.19e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0349 V          ; 0.253 V                             ; 0.069 V                             ; 4.96e-10 s                 ; 5.19e-10 s                 ; No                        ; Yes                       ;
+; saida0[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; saida0[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; reset_ativo   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.72 V              ; -0.0408 V           ; 0.163 V                              ; 0.075 V                              ; 4.51e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.72 V             ; -0.0408 V          ; 0.163 V                             ; 0.075 V                             ; 4.51e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; botao_ativo   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.72 V              ; -0.0747 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-10 s                   ; 3.01e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.72 V             ; -0.0747 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-10 s                  ; 3.01e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-08 V                   ; 2.7 V               ; -0.0212 V           ; 0.204 V                              ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-08 V                  ; 2.7 V              ; -0.0212 V          ; 0.204 V                             ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; No                        ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -945,7 +1138,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock_in   ; clock_in ; 16       ; 0        ; 0        ; 0        ;
+; clock_in   ; clock_in ; 22       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -955,7 +1148,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock_in   ; clock_in ; 16       ; 0        ; 0        ; 0        ;
+; clock_in   ; clock_in ; 22       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -980,9 +1173,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 5     ; 5    ;
-; Unconstrained Output Ports      ; 8     ; 8    ;
-; Unconstrained Output Port Paths ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 12    ; 12   ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 19    ; 19   ;
 +---------------------------------+-------+------+
 
 
@@ -992,7 +1185,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu May 31 23:42:41 2018
+    Info: Processing started: Fri Jun 01 01:29:52 2018
 Info: Command: quartus_sta ex_02 -c ex_02
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
@@ -1009,50 +1202,50 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.372
+Info (332146): Worst-case setup slack is -0.660
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.372              -0.743 clock_in 
-Info (332146): Worst-case hold slack is 0.359
+    Info (332119):    -0.660              -1.960 clock_in 
+Info (332146): Worst-case hold slack is 0.362
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.359               0.000 clock_in 
+    Info (332119):     0.362               0.000 clock_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -14.000 clock_in 
+    Info (332119):    -3.000             -18.000 clock_in 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.227
+Info (332146): Worst-case setup slack is -0.501
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.227              -0.454 clock_in 
-Info (332146): Worst-case hold slack is 0.312
+    Info (332119):    -0.501              -1.364 clock_in 
+Info (332146): Worst-case hold slack is 0.320
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.312               0.000 clock_in 
+    Info (332119):     0.320               0.000 clock_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -14.000 clock_in 
+    Info (332119):    -3.000             -18.000 clock_in 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.248
+Info (332146): Worst-case setup slack is 0.082
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.248               0.000 clock_in 
-Info (332146): Worst-case hold slack is 0.188
+    Info (332119):     0.082               0.000 clock_in 
+Info (332146): Worst-case hold slack is 0.195
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.188               0.000 clock_in 
+    Info (332119):     0.195               0.000 clock_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Critical Warning (332148): Timing requirements not met
@@ -1060,13 +1253,13 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -14.605 clock_in 
+    Info (332119):    -3.000             -18.840 clock_in 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4681 megabytes
-    Info: Processing ended: Thu May 31 23:42:45 2018
+    Info: Peak virtual memory: 4680 megabytes
+    Info: Processing ended: Fri Jun 01 01:29:56 2018
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

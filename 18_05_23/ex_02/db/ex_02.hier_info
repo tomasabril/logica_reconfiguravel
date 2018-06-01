@@ -1,4 +1,8 @@
 |ex_02
+clock_in => final[0].CLK
+clock_in => final[1].CLK
+clock_in => final[2].CLK
+clock_in => final[3].CLK
 clock_in => led_bar[0].CLK
 clock_in => led_bar[1].CLK
 clock_in => led_bar[2].CLK
@@ -9,6 +13,8 @@ clock_in => led_bar[6].CLK
 clock_in => led_bar[7].CLK
 clock_in => led_bar[8].CLK
 clock_in => led_bar[9].CLK
+clock_in => botao_ativo~reg0.CLK
+clock_in => reset_ativo~reg0.CLK
 clock_in => bot_still_pressed.CLK
 clock_in => bot.CLK
 clock_in => state~4.DATAIN
@@ -17,8 +23,11 @@ reset => bot_still_pressed.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
+reset => reset_ativo~reg0.DATAIN
+bot_raw => botao_ativo.OUTPUTSELECT
 bot_raw => bot.OUTPUTSELECT
 bot_raw => bot_still_pressed.OUTPUTSELECT
+bot_raw => botao_ativo.OUTPUTSELECT
 bot_raw => bot.OUTPUTSELECT
 bot_raw => bot_still_pressed.OUTPUTSELECT
 leds[0] << led_bar[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -31,5 +40,14 @@ leds[6] << led_bar[6].DB_MAX_OUTPUT_PORT_TYPE
 leds[7] << led_bar[7].DB_MAX_OUTPUT_PORT_TYPE
 leds[8] << led_bar[8].DB_MAX_OUTPUT_PORT_TYPE
 leds[9] << led_bar[9].DB_MAX_OUTPUT_PORT_TYPE
+saida0[0] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[1] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[2] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[3] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[4] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[5] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+saida0[6] << saida0.DB_MAX_OUTPUT_PORT_TYPE
+reset_ativo << reset_ativo~reg0.DB_MAX_OUTPUT_PORT_TYPE
+botao_ativo << botao_ativo~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
