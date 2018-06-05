@@ -25,7 +25,6 @@ ENTITY
 END ex_02;
 
 ARCHITECTURE ex_02 OF ex_02 IS
-	SIGNAL led_bar      : UNSIGNED (9 DOWNTO 0) := "0000000000";
 
 	SIGNAL final        : integer;
 	SIGNAL saidabin     : STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -36,78 +35,71 @@ ARCHITECTURE ex_02 OF ex_02 IS
 	-- Register to hold the current state
 	signal state : state_type;
 BEGIN
-	leds <= std_LOGIC_VECTOR(led_bar);
 
 	PROCESS (clock_in, reset)
   -- button after debounce
   variable bot : boolean;
   variable bot_still_pressed : boolean;
   variable debounce_counter : integer;
-	BEGIN
-		IF rising_edge(clock_in) then
 
+	BEGIN
 		IF reset = '1' THEN
-        bot := false;
-        bot_still_pressed := false;
 				debounce_counter := 0;
         state <= init;
-        reset_ativo <= '1';
-      else
+		  bot := false;
         reset_ativo <= '0';
-		END IF;
-
-      if(bot_raw = '0') then
-        botao_ativo <= '1';
-        -- button is currently pressed
-        if(bot_still_pressed = false) then
-          bot := true;
-          bot_still_pressed := true;
-        elsif(bot_still_pressed = true) then
-          bot := false;
-        end if;
-      elsif (bot_raw = '1') then
-        -- button is not currently pressed
-        bot:= false;
-        bot_still_pressed := false;
-      else
-        botao_ativo <= '0';
-      end if;
-
-      case state is
-        when init =>
-          led_bar <= "1111001111";
-          state   <= s1;
-          final <= 0;
-        when s1 =>
-          led_bar <= "1111000000";
-          if (bot = false) then
-            -- botao pressionado
-            state <= s2;
-            final <= 1;
-          end if;
-        when s2 =>
-          led_bar <= "0000001111";
-          if (bot = false) then
-            -- botao pressionado
-            state <= s1;
-            final <= 2;
-          end if;
-      end case;
-
-
+		ELSIF rising_edge(clock_in) then
+			reset_ativo <= '1';
+	
+		if(debounce_counter>= 20_000_000 and bot = true) then
+			debounce_counter := 0;
+					case state is
+					  when init =>
+						 state <= s1;
+					  when s1 =>
+						 if (bot_raw = '1') then
+							-- botao pressionado
+							state <= s2;
+						 else
+							state <= s1;
+						 end if;
+					  when s2 =>
+						 if (bot_raw = '1') then
+							-- botao pressionado
+							state <= s1;
+						 else
+							state <= s2;
+						 end if;
+					end case;
+		end if;
+		debounce_counter :=  debounce_counter+1;
+		bot := true;
 		END IF;
 
 
 	END PROCESS;
 
 -- code bellow to display on 7 segment display
+
+	
+	final <=	0 WHEN state = s1 ELSE
+	         1 WHEN state = s2 ELSE
+				2 WHEN state = init ELSE
+				3;
+
+				 
 	saidabin <= std_LOGIC_VECTOR(to_unsigned(final, 12));
 
 	saida_GENERATE_FOR : FOR i IN 0 TO 3 GENERATE
 		saidadecbin(i)  <= saidabin(i);
 	END GENERATE saida_GENERATE_FOR;
-
-
+	
+					 
+	leds <=	 "1111000000" WHEN state = s1 ELSE
+	          "0000001111" WHEN state = s2 ELSE
+				 "1111001111" WHEN state = init ELSE
+				 "1000000001";
+				
 	saida0 <= "0000001" WHEN saidadecbin = "0000" ELSE
 	          "1001111" WHEN saidadecbin = "0001" ELSE
 	          "0010010" WHEN saidadecbin = "0010" ELSE
