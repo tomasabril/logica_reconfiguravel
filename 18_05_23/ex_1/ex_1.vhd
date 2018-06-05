@@ -16,6 +16,8 @@ END ENTITY;
 ARCHITECTURE ex_1 OF ex_1 IS
   TYPE state IS (I,A, B, C);
   SIGNAL pr_state, nx_state: state;
+  SIGNAL tmp : INTEGER;
+  SIGNAL cat : character;
 BEGIN
 	process (clk, rst)
 	VARIABLE clock_counter : INTEGER := 0;
@@ -23,33 +25,35 @@ BEGIN
 		if rst = '1' then
 			pr_state <= I;
 	ELSIF rising_edge(clk) THEN
+	tmp <= to_integer(signed(letter));
+	cat <= character'val(tmp);
 	clock_counter := (clock_counter + 1);
 	IF (clock_counter >= 50_000_000) THEN
 		  clock_counter := 0;
 		IF (input1 = '1') THEN
 			case pr_state is
 				when I =>
-					if letter = "01100001" then
+					if (cat = 'a') then
 						pr_state <= A;
 					else
 						pr_state <= I;
 					end if;
 				when A =>
-					if letter = "01100010" then
+					if (cat = 'b') then
 						pr_state <= B;
-					elsif letter = "01100001" then
+					elsif (cat = 'a') then
 						pr_state <= A;
 					end if;
 				when B =>
-					if letter = "01100001" then
+					if (cat = 'a') then
 						pr_state <= C;
-					elsif letter = "01100010" then
+					elsif (cat = 'b') then
 						pr_state <= I;
 					end if;
 				when C =>
-					if letter = "01100001" then
+					if (cat = 'a') then
 						pr_state <= A;
-				elsif letter = "01100010" then
+				elsif (cat = 'b') then
 						pr_state <= B;
 					end if;
 			end case;
@@ -65,8 +69,8 @@ BEGIN
 					 "0000001111";
 		
 	
-		saida	 <= "1100000" WHEN letter = "01100010"  ELSE
-					 "0001000" WHEN letter = "01100001"  ELSE
+		saida	 <= "1100000" WHEN (cat = 'b')  ELSE
+					 "0001000" WHEN (cat = 'a')  ELSE
 					 "1111111";
 
 END ARCHITECTURE;

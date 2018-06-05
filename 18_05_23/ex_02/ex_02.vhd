@@ -46,15 +46,15 @@ BEGIN
 	BEGIN
 		IF rising_edge(clock_in) then
 
-			IF reset = '1' THEN
+		IF reset = '1' THEN
         bot := false;
         bot_still_pressed := false;
-				debounce_counter     := 0;
+				debounce_counter := 0;
         state <= init;
         reset_ativo <= '1';
       else
         reset_ativo <= '0';
-			END IF;
+		END IF;
 
       if(bot_raw = '0') then
         botao_ativo <= '1';
@@ -73,7 +73,6 @@ BEGIN
         botao_ativo <= '0';
       end if;
 
-[  ]
       case state is
         when init =>
           led_bar <= "1111001111";
