@@ -9,6 +9,7 @@ ENTITY ex_1 IS
   PORT(	
     clk , rst   : IN  STD_LOGIC;  --input clock
     input1  : IN  STD_LOGIC;  --input signal to be debounced
+	 overlap  : IN  STD_LOGIC;  --input signal to be debounced
 	 letter   : IN STD_logic_vector (7 downto 0);
 	 saida    : OUT STD_logic_vector (6 downto 0);
 	 led		          : OUT  std_logic_vector(9 downto 0));
@@ -22,7 +23,7 @@ BEGIN
 	process (clk, rst)
 	VARIABLE clock_counter : INTEGER := 0;
 	begin
-		if rst = '1' then
+		if rst = '0' then
 			pr_state <= I;
 	ELSIF rising_edge(clk) THEN
 	tmp <= to_integer(signed(letter));
@@ -53,8 +54,12 @@ BEGIN
 				when C =>
 					if (cat = 'a') then
 						pr_state <= A;
-				elsif (cat = 'b') then
-						pr_state <= B;
+					elsif (cat = 'b') then
+						if(overlap =  '1') then
+							pr_state <= B;
+						else
+							pr_state<= I;
+						end if;
 					end if;
 			end case;
 		END IF;
@@ -63,9 +68,11 @@ BEGIN
 	END PROCESS;
 			
 		led	 <= "0000000001" WHEN pr_state = A ELSE
+		
+		
 					 "0000000010" WHEN pr_state = B ELSE
 					 "1111110000" WHEN pr_state = C ELSE
-					 "0000000000" WHEN pr_state = I ELSE
+					 "1000000000" WHEN pr_state = I ELSE
 					 "0000001111";
 		
 	
