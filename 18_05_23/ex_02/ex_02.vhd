@@ -34,54 +34,67 @@ ARCHITECTURE ex_02 OF ex_02 IS
 	type state_type is (init, s1, s2);
 	-- Register to hold the current state
 	signal state : state_type;
+	Signal result: std_logic;
+	
 BEGIN
 
-	PROCESS (clock_in, reset)
+PROCESS (clock_in, reset)
   -- button after debounce
   variable bot : boolean;
   variable bot_still_pressed : boolean;
   variable debounce_counter : integer;
-
+  variable debounce_counter_s : integer;
+  variable counter : integer;
 	BEGIN
 		IF reset = '1' THEN
-				debounce_counter := 0;
+		  debounce_counter := 0;
         state <= init;
 		  bot := false;
         reset_ativo <= '0';
 		ELSIF rising_edge(clock_in) then
 			reset_ativo <= '1';
-	
-		if(debounce_counter>= 20_000_000 and bot = true) then
-			debounce_counter := 0;
+		if(bot_raw = '0') then
+		   if(debounce_counter>100_000) then
+			   result<= '0';
+				debounce_counter:=0;
+			else
+				debounce_counter:= debounce_counter+1;
+			end if;
+		end if;
+		
+		if(bot_raw = '1') then
+		   if(debounce_counter_s>100_000) then
+			   result<= '1';
+				debounce_counter_s:=0;
+			else
+				debounce_counter_s:= debounce_counter_s+1;
+			end if;
+		end if;
+			
+		counter :=  counter+1;
+		if(counter>= 15_000_000) then
+			counter := 0;
 					case state is
 					  when init =>
 						 state <= s1;
 					  when s1 =>
-						 if (bot_raw = '1') then
+						 if (result = '0') then
 							-- botao pressionado
 							state <= s2;
-						 else
-							state <= s1;
 						 end if;
 					  when s2 =>
-						 if (bot_raw = '1') then
+						 if (result = '0') then
 							-- botao pressionado
 							state <= s1;
-						 else
-							state <= s2;
 						 end if;
 					end case;
 		end if;
-		debounce_counter :=  debounce_counter+1;
-		bot := true;
 		END IF;
 
 
 	END PROCESS;
 
 -- code bellow to display on 7 segment display
-
-	
 	final <=	0 WHEN state = s1 ELSE
 	         1 WHEN state = s2 ELSE
 				2 WHEN state = init ELSE
