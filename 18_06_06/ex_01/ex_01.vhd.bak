@@ -1,0 +1,92 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+
+ENTITY ex_1 IS
+
+	GENERIC(
+		n	: INTEGER := 6
+	);
+
+	PORT(
+		--input
+		bot_up		: IN STD_LOGIC;
+		bot_down	: IN STD_LOGIC;
+		--process
+		clk		: IN STD_LOGIC;
+		rst		: IN STD_LOGIC;
+		--output
+		output		: OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
+	);
+
+END ex_1;
+
+
+ARCHITECTURE ex_1 OF ex_1 IS
+
+	SIGNAL queue			: STD_LOGIC_VECTOR(n DOWNTO 0);
+	SIGNAL queue_lenght		: INTEGER := 0;
+	SIGNAL amount_deposit	: INTEGER := 0;
+	SIGNAL action			: INTEGER := 0;
+	
+BEGIN
+
+	QUEUEING :	PROCESS(clk, rst) IS
+	
+	BEGIN
+	
+		--adds a 1 to the queue
+		IF (bot_up = '1') THEN
+			queue_lenght <= queue_lenght + 1;
+			queue(queue_lenght) <= '1';
+			amount_deposit <= amount_deposit + 1;
+		END IF;
+		
+		--adds a 0 to the queue
+		IF (bot_down = '1') THEN
+			queue_lenght <= queue_lenght + 1;
+			queue(queue_lenght) <= '0';
+			amount_deposit <= amount_deposit - 1;
+		END IF;
+		
+		IF (action = 1) THEN
+			action <= 0;
+		END IF;
+		
+		
+	END PROCESS QUEUEING;
+	
+	
+	PROCESSING :	PROCESS(action, rst) IS
+	
+	BEGIN
+	
+		IF (queue_lenght >= 1) THEN		
+			IF (queue(1) = '1') THEN
+					output_generate_1 : FOR i IN 0 TO n-2-amount_deposit LOOP
+						output(i) <= '1';
+						--delay here
+						output(i) <= '0';
+					END LOOP output_generate_1;
+					output(n-1-amount_deposit) <= '1';
+					action <= 1;
+			END IF;
+			
+			IF (queue(1) = '0') THEN
+					output(n-1-amount_deposit) <= '0';
+					output_generate_2 : FOR i IN n-2-amount_deposit TO 0 LOOP
+						output(i) <= '1';
+						--delay here
+						output(i) <= '0';
+					END LOOP output_generate_2;
+					action <= 1;
+			END IF;
+		
+			queue <= std_logic_vector(shift_left(unsigned(queue), 1));
+			queue_lenght <= queue_lenght - 1;
+		END IF;
+		
+	END PROCESS PROCESSING;
+
+END ARCHITECTURE;

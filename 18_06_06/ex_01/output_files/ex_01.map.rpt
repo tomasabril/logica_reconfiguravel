@@ -1,0 +1,588 @@
+Analysis & Synthesis report for ex_01
+Sun Jun 10 21:15:09 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |ex_01
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 10 21:15:09 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ex_01                                           ;
+; Top-level Entity Name              ; ex_01                                           ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 270                                             ;
+;     Total combinational functions  ; 270                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 13                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; ex_01              ; ex_01              ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------+---------+
+; ex_01.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Logica Reconfiguravel/ex_01/ex_01.vhd ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 270          ;
+;                                             ;              ;
+; Total combinational functions               ; 270          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 35           ;
+;     -- 3 input functions                    ; 187          ;
+;     -- <=2 input functions                  ; 48           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 175          ;
+;     -- arithmetic mode                      ; 95           ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 13           ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+; Maximum fan-out node                        ; LessThan1~10 ;
+; Maximum fan-out                             ; 52           ;
+; Total fan-out                               ; 819          ;
+; Average fan-out                             ; 2.77         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ex_01                     ; 270 (270)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |ex_01              ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; output[0]$latch                                      ; LessThan1           ; yes                    ;
+; output[1]$latch                                      ; LessThan1           ; yes                    ;
+; output[2]$latch                                      ; LessThan1           ; yes                    ;
+; output[3]$latch                                      ; LessThan1           ; yes                    ;
+; output[4]$latch                                      ; LessThan1           ; yes                    ;
+; output[5]$latch                                      ; LessThan1           ; yes                    ;
+; output[6]$latch                                      ; LessThan1           ; yes                    ;
+; output[7]$latch                                      ; LessThan1           ; yes                    ;
+; output[8]$latch                                      ; LessThan1           ; yes                    ;
+; output[9]$latch                                      ; LessThan1           ; yes                    ;
+; output_buffer[0]                                     ; output_buffer[0]    ; yes                    ;
+; queue_lenght[31]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[30]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[29]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[28]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[27]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[26]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[25]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[24]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[23]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[22]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[21]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[20]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[19]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[18]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[17]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[16]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[15]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[14]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[13]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[12]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[11]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[10]                                     ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[9]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[8]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[7]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[6]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[5]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[4]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[3]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[2]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[1]                                      ; queue_lenght[31]    ; yes                    ;
+; queue_lenght[0]                                      ; queue_lenght[31]    ; yes                    ;
+; output_buffer[1]                                     ; output_buffer[1]    ; yes                    ;
+; output_buffer[2]                                     ; output_buffer[2]    ; yes                    ;
+; output_buffer[3]                                     ; output_buffer[3]    ; yes                    ;
+; output_buffer[4]                                     ; output_buffer[4]    ; yes                    ;
+; output_buffer[5]                                     ; output_buffer[5]    ; yes                    ;
+; output_buffer[6]                                     ; output_buffer[6]    ; yes                    ;
+; output_buffer[7]                                     ; output_buffer[7]    ; yes                    ;
+; output_buffer[8]                                     ; output_buffer[8]    ; yes                    ;
+; output_buffer[9]                                     ; output_buffer[9]    ; yes                    ;
+; queue[1]                                             ; queue[1]            ; yes                    ;
+; deposit[0]                                           ; Add1                ; yes                    ;
+; deposit[1]                                           ; Add1                ; yes                    ;
+; deposit[3]                                           ; Add1                ; yes                    ;
+; deposit[2]                                           ; Add1                ; yes                    ;
+; x[31]                                                ; LessThan1           ; yes                    ;
+; y[31]                                                ; LessThan0           ; yes                    ;
+; y[30]                                                ; LessThan0           ; yes                    ;
+; x[30]                                                ; LessThan1           ; yes                    ;
+; y[29]                                                ; LessThan0           ; yes                    ;
+; x[29]                                                ; LessThan1           ; yes                    ;
+; y[28]                                                ; LessThan0           ; yes                    ;
+; x[28]                                                ; LessThan1           ; yes                    ;
+; y[27]                                                ; LessThan0           ; yes                    ;
+; x[27]                                                ; LessThan1           ; yes                    ;
+; y[26]                                                ; LessThan0           ; yes                    ;
+; x[26]                                                ; LessThan1           ; yes                    ;
+; y[25]                                                ; LessThan0           ; yes                    ;
+; x[25]                                                ; LessThan1           ; yes                    ;
+; y[24]                                                ; LessThan0           ; yes                    ;
+; x[24]                                                ; LessThan1           ; yes                    ;
+; y[23]                                                ; LessThan0           ; yes                    ;
+; x[23]                                                ; LessThan1           ; yes                    ;
+; y[22]                                                ; LessThan0           ; yes                    ;
+; x[22]                                                ; LessThan1           ; yes                    ;
+; y[21]                                                ; LessThan0           ; yes                    ;
+; x[21]                                                ; LessThan1           ; yes                    ;
+; y[20]                                                ; LessThan0           ; yes                    ;
+; x[20]                                                ; LessThan1           ; yes                    ;
+; y[19]                                                ; LessThan0           ; yes                    ;
+; x[19]                                                ; LessThan1           ; yes                    ;
+; y[18]                                                ; LessThan0           ; yes                    ;
+; x[18]                                                ; LessThan1           ; yes                    ;
+; y[17]                                                ; LessThan0           ; yes                    ;
+; x[17]                                                ; LessThan1           ; yes                    ;
+; y[16]                                                ; LessThan0           ; yes                    ;
+; x[16]                                                ; LessThan1           ; yes                    ;
+; y[15]                                                ; LessThan0           ; yes                    ;
+; x[15]                                                ; LessThan1           ; yes                    ;
+; y[14]                                                ; LessThan0           ; yes                    ;
+; x[14]                                                ; LessThan1           ; yes                    ;
+; y[13]                                                ; LessThan0           ; yes                    ;
+; x[13]                                                ; LessThan1           ; yes                    ;
+; y[12]                                                ; LessThan0           ; yes                    ;
+; x[12]                                                ; LessThan1           ; yes                    ;
+; y[11]                                                ; LessThan0           ; yes                    ;
+; x[11]                                                ; LessThan1           ; yes                    ;
+; y[10]                                                ; LessThan0           ; yes                    ;
+; Number of user-specified and inferred latches = 122  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ex_01 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 10    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Jun 10 21:15:07 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex_01 -c ex_01
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (12125): Using design file ex_01.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ex_01-ex_01
+    Info (12023): Found entity 1: ex_01
+Info (12127): Elaborating entity "ex_01" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(42): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(42): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(43): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(44): signal "queue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(45): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(49): signal "bot_up" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(50): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(51): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(52): signal "deposit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(56): signal "bot_down" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(57): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(58): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(59): signal "deposit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(37): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(37): inferring latch(es) for signal or variable "queue", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(37): inferring latch(es) for signal or variable "queue_lenght", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(37): inferring latch(es) for signal or variable "deposit", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(71): signal "queue_lenght" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(73): signal "queue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(75): signal "output_buffer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(77): signal "output_buffer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(80): signal "output_buffer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(83): signal "deposit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(84): signal "output_buffer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(88): signal "queue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(89): signal "deposit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(90): signal "output_buffer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10445): VHDL Subtype or Type Declaration warning at ex_01.vhd(91): subtype or type has null range
+Warning (10492): VHDL Process Statement warning at ex_01.vhd(101): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(66): inferring latch(es) for signal or variable "output_buffer", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(66): inferring latch(es) for signal or variable "output", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ex_01.vhd(66): inferring latch(es) for signal or variable "x", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "x[0]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[1]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[2]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[3]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[4]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[5]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[6]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[7]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[8]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[9]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[10]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[11]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[12]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[13]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[14]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[15]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[16]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[17]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[18]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[19]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[20]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[21]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[22]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[23]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[24]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[25]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[26]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[27]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[28]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[29]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[30]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "x[31]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[0]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[1]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[2]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[3]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[4]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[5]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[6]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[7]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[8]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output[9]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[0]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[1]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[2]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[3]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[4]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[5]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[6]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[7]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[8]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "output_buffer[9]" at ex_01.vhd(66)
+Info (10041): Inferred latch for "deposit[0]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[1]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[2]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[3]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[4]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[5]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[6]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[7]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[8]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[9]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[10]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[11]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[12]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[13]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[14]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[15]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[16]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[17]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[18]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[19]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[20]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[21]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[22]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[23]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[24]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[25]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[26]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[27]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[28]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[29]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[30]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "deposit[31]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[0]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[1]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[2]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[3]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[4]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[5]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[6]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[7]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[8]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[9]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[10]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[11]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[12]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[13]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[14]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[15]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[16]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[17]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[18]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[19]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[20]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[21]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[22]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[23]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[24]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[25]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[26]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[27]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[28]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[29]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[30]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue_lenght[31]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue[0]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "queue[1]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[0]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[1]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[2]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[3]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[4]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[5]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[6]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[7]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[8]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[9]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[10]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[11]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[12]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[13]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[14]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[15]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[16]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[17]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[18]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[19]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[20]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[21]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[22]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[23]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[24]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[25]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[26]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[27]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[28]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[29]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[30]" at ex_01.vhd(37)
+Info (10041): Inferred latch for "y[31]" at ex_01.vhd(37)
+Warning (13012): Latch output_buffer[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch output_buffer[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal queue[1]
+Warning (13012): Latch queue[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal bot_down
+Warning (13012): Latch queue[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal bot_down
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 283 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 270 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 542 megabytes
+    Info: Processing ended: Sun Jun 10 21:15:09 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
