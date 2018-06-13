@@ -1,0 +1,7 @@
+
+State Machine - |ex_2|state
+Name state.R state.Y state.G state.init 
+state.init 0 0 0 0 
+state.G 0 0 1 1 
+state.Y 0 1 0 1 
+state.R 1 0 0 1 
