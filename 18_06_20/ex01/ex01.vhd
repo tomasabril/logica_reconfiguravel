@@ -29,93 +29,125 @@ ARCHITECTURE ex01 OF ex01 IS
     TYPE state_type IS (and1, and2, and3);
     -- Register to hold the current state
     SIGNAL andar       : state_type;
+	 SIGNAL andar_ant   : state_type;
 	 
 	 signal output_led_sig: integer;
 	 
     SIGNAL final       : INTEGER;
     SIGNAL saidabin    : STD_LOGIC_VECTOR(11 DOWNTO 0);
     SIGNAL saidadecbin : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	 
+	 constant tmax: natural    :=   900_000_000;
+	 constant waitmax: natural :=   150_000_000;
+	 signal t: natural range 0 to tmax;
 BEGIN
+
+
     PROCESS (clk, rst)
         VARIABLE prox_andar : state_type;
         VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);	  
 	
     BEGIN
-        IF (rst = '1') THEN
+        IF (rst = '0') THEN
+				prox_andar := and1;
+				btn_vec := "000";
+				t <= 0;
+				andar <= and1;
+				final <= 0;
+        
 
-        END IF;
-
-        IF (rising_edge(clk)) THEN
+        elsIF (rising_edge(clk)) THEN
 
             --read buttons
             IF (btn(0) = '0') THEN
-                btn_vec(0) := '1';
-					 
+                btn_vec(0) := '1';	 
             END IF;
             IF (btn(1) = '0') THEN
 				    btn_vec(1) := '1';
-					 
             END IF;
             IF (btn(2) = '0') THEN
                 btn_vec(2) := '1';
-  					 
 				END IF;
             IF (btn(3) = '0') THEN
                 btn_vec(0) := '1';
-
 				END IF;
             IF (btn(4) = '0') THEN
                 btn_vec(1) := '1';
-
             END IF;
             IF (btn(5) = '0') THEN
                 btn_vec(2) := '1';
-
             END IF;
+				
 				
             --define next andar
             ----go over list to find where the elevator has to go
             IF (btn_vec(0) = '1') THEN
                 prox_andar := and1;
                 btn_vec(0) := '0';
+					 t<= 0;
             ELSIF (btn_vec(1) = '1') THEN
                 prox_andar := and2;
                 btn_vec(1) := '0';
+					 t<= 0;
             ELSIF (btn_vec(2) = '1') THEN
                 prox_andar := and3;
                 btn_vec(2) := '0';
+					 t<= 0;
             END IF;
-            -- state machine
+				
+				output_led <= btn_vec;
+  
+  
+				--temporizador para maquina de estado
+				if( t <= tmax) then
+					t <= t +1;
+				end if;
+  
+				-- state machine
+				andar_ant <= andar;
             CASE andar IS
                 WHEN and1 =>
                     -- show output
                     final <= 1;
                     --go to next state
-                    IF (prox_andar = and2) THEN
-                        andar <= and2;
-                    ELSIF (prox_andar = and3) THEN
-                        andar <= and3;
-                    END IF;
+						  if t >= waitmax then						  
+							  IF (prox_andar = and2) THEN
+									andar <= and2;
+									t<=0;
+							  ELSIF (prox_andar = and3) THEN
+									andar <= and3;
+									t<=0;
+							  END IF;
+						  end if;
 
                 WHEN and2 =>
                     -- show output
                     final <= 2;
                     --go to next state
-                    IF (prox_andar = and1) THEN
+                    if t >= waitmax then
+						  IF (prox_andar = and1) THEN
                         andar <= and1;
+								t<=0;
                     ELSIF (prox_andar = and3) THEN
                         andar <= and3;
+								t<=0;
                     END IF;
+						  end if;
 
                 WHEN and3 =>
                     -- show output
                     final <= 3;
                     --go to next state
+						  if t >= waitmax then
                     IF (prox_andar = and1) THEN
                         andar <= and1;
+								t<=0;
                     ELSIF (prox_andar = and2) THEN
                         andar <= and2;
+								t<=0;
                     END IF;
+						  end if;
+						  
             END CASE;
         END IF;
 
