@@ -20,7 +20,7 @@ ENTITY
         -- mostra botoes que estao apertados
         output_led    : OUT STD_LOGIC_VECTOR (n - 1 DOWNTO 0);
         -- displays, mostra o andar atual do elevador
-        floor_display : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        floor_display : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 END ex01;
 
@@ -29,13 +29,17 @@ ARCHITECTURE ex01 OF ex01 IS
     TYPE state_type IS (and1, and2, and3);
     -- Register to hold the current state
     SIGNAL andar       : state_type;
+	 
+	 signal output_led_sig: integer;
+	 
     SIGNAL final       : INTEGER;
     SIGNAL saidabin    : STD_LOGIC_VECTOR(11 DOWNTO 0);
     SIGNAL saidadecbin : STD_LOGIC_VECTOR(3 DOWNTO 0);
 BEGIN
     PROCESS (clk, rst)
         VARIABLE prox_andar : state_type;
-        VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);
+        VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);	  
+	
     BEGIN
         IF (rst = '1') THEN
 
@@ -44,42 +48,42 @@ BEGIN
         IF (rising_edge(clk)) THEN
 
             --read buttons
-            IF (btn[0] == '0') THEN
-                btn_vec[0] := 1;
+            IF (btn(0) = '0') THEN
+                btn_vec(0) := '1';
+					 
             END IF;
-            IF (btn[1] == '0') THEN
-                btn_vec[1] := 1;
+            IF (btn(1) = '0') THEN
+				    btn_vec(1) := '1';
+					 
             END IF;
-            IF (btn[2] == '0') THEN
-                btn_vec[2] := 1;
-            END IF;
-            IF (btn[3] == '0') THEN
-                btn_vec[0] := 1;
-            END IF;
-            IF (btn[4] == '0') THEN
-                btn_vec[1] := 1;
-            END IF;
-            IF (btn[5] == '0') THEN
-                btn_vec[2] := 1;
-            END IF;
-            output_led[0] <= '1' WHEN btn_vec[0] == 1 ELSE '0';
-            output_led[1] <= '1' WHEN btn_vec[1] == 1 ELSE '0';
-            output_led[2] <= '1' WHEN btn_vec[2] == 1 ELSE '0';
+            IF (btn(2) = '0') THEN
+                btn_vec(2) := '1';
+  					 
+				END IF;
+            IF (btn(3) = '0') THEN
+                btn_vec(0) := '1';
 
-            output_led[3] <= '1' WHEN btn_vec[3] == 1 ELSE '0';
-            output_led[4] <= '1' WHEN btn_vec[4] == 1 ELSE '0';
-            output_led[5] <= '1' WHEN btn_vec[5] == 1 ELSE '0';
+				END IF;
+            IF (btn(4) = '0') THEN
+                btn_vec(1) := '1';
+
+            END IF;
+            IF (btn(5) = '0') THEN
+                btn_vec(2) := '1';
+
+            END IF;
+				
             --define next andar
             ----go over list to find where the elevator has to go
-            IF (btn_vec[0] == '1') THEN
+            IF (btn_vec(0) = '1') THEN
                 prox_andar := and1;
-                btn_vec[0] := 0;
-            ELSIF (btn_vec[1] == '1') THEN
+                btn_vec(0) := '0';
+            ELSIF (btn_vec(1) = '1') THEN
                 prox_andar := and2;
-                btn_vec[1] := 0;
-            ELSIF (btn_vec[2] == '1') THEN
+                btn_vec(1) := '0';
+            ELSIF (btn_vec(2) = '1') THEN
                 prox_andar := and3;
-                btn_vec[2] := 0;
+                btn_vec(2) := '0';
             END IF;
             -- state machine
             CASE andar IS
@@ -87,9 +91,9 @@ BEGIN
                     -- show output
                     final <= 1;
                     --go to next state
-                    IF (prox_andar == and2) THEN
+                    IF (prox_andar = and2) THEN
                         andar <= and2;
-                    ELSIF (prox_andar == and3) THEN
+                    ELSIF (prox_andar = and3) THEN
                         andar <= and3;
                     END IF;
 
@@ -97,9 +101,9 @@ BEGIN
                     -- show output
                     final <= 2;
                     --go to next state
-                    IF (prox_andar == and1) THEN
+                    IF (prox_andar = and1) THEN
                         andar <= and1;
-                    ELSIF (prox_andar == and3) THEN
+                    ELSIF (prox_andar = and3) THEN
                         andar <= and3;
                     END IF;
 
@@ -107,15 +111,22 @@ BEGIN
                     -- show output
                     final <= 3;
                     --go to next state
-                    IF (prox_andar == and1) THEN
+                    IF (prox_andar = and1) THEN
                         andar <= and1;
-                    ELSIF (prox_andar == and2) THEN
+                    ELSIF (prox_andar = and2) THEN
                         andar <= and2;
                     END IF;
             END CASE;
         END IF;
 
     END PROCESS;
+--	 
+--	 output_led <= "100" when output_led_sig = 1 elsE
+--	 "010" when output_led_sig = 1 elsE
+--	 "100" when output_led_sig = 1 elsE
+--	 "000"
+--	 ;
+	 
     saidabin <= std_LOGIC_VECTOR(to_unsigned(final, 12));
 
     saida_GENERATE_FOR : FOR i IN 0 TO 3 GENERATE

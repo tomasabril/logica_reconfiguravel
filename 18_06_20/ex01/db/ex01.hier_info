@@ -1,0 +1,29 @@
+|ex01
+clk => final[0].CLK
+clk => final[1].CLK
+clk => final[2].CLK
+clk => final[3].CLK
+clk => btn_vec[0].CLK
+clk => btn_vec[1].CLK
+clk => btn_vec[2].CLK
+clk => andar~4.DATAIN
+clk => prox_andar~4.DATAIN
+rst => ~NO_FANOUT~
+btn[0] => btn_vec.OUTPUTSELECT
+btn[1] => btn_vec.OUTPUTSELECT
+btn[2] => btn_vec.OUTPUTSELECT
+btn[3] => btn_vec.OUTPUTSELECT
+btn[4] => btn_vec.OUTPUTSELECT
+btn[5] => btn_vec.OUTPUTSELECT
+output_led[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+output_led[1] <= output_led[1].DB_MAX_OUTPUT_PORT_TYPE
+output_led[2] <= output_led[2].DB_MAX_OUTPUT_PORT_TYPE
+floor_display[0] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[1] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[2] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[3] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[4] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[5] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[6] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+
+
