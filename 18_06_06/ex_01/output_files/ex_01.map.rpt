@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ex_01
-Wed Jun 13 17:19:12 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Jun 26 04:48:52 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -13,16 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
+  8. State Machine - |ex_01|state
+  9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |ex_01
- 14. Parameter Settings for User Entity Instance: debounce:debounce_up
- 15. Parameter Settings for User Entity Instance: debounce:debounce_down
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |ex_01
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -45,24 +42,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 13 17:19:12 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; ex_01                                           ;
-; Top-level Entity Name              ; ex_01                                           ;
-; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 327                                             ;
-;     Total combinational functions  ; 313                                             ;
-;     Dedicated logic registers      ; 122                                             ;
-; Total registers                    ; 122                                             ;
-; Total pins                         ; 21                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 26 04:48:52 2018      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; ex_01                                      ;
+; Top-level Entity Name              ; ex_01                                      ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 451                                        ;
+;     Total combinational functions  ; 444                                        ;
+;     Dedicated logic registers      ; 170                                        ;
+; Total registers                    ; 170                                        ;
+; Total pins                         ; 28                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -152,98 +149,95 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ex_01.vhd                        ; yes             ; User VHDL File  ; D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Logica Reconfiguravel/logica_reconfiguravel/18_06_06/ex_01/ex_01.vhd            ;         ;
-; debounce_maneiro.vhd             ; yes             ; User VHDL File  ; D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Logica Reconfiguravel/logica_reconfiguravel/18_06_06/ex_01/debounce_maneiro.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+; ex_01.vhd                        ; yes             ; User VHDL File  ; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_06_06/ex_01/ex_01.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 327       ;
-;                                             ;           ;
-; Total combinational functions               ; 313       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 64        ;
-;     -- 3 input functions                    ; 96        ;
-;     -- <=2 input functions                  ; 153       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 142       ;
-;     -- arithmetic mode                      ; 171       ;
-;                                             ;           ;
-; Total registers                             ; 122       ;
-;     -- Dedicated logic registers            ; 122       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 21        ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 122       ;
-; Total fan-out                               ; 1358      ;
-; Average fan-out                             ; 2.85      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 451            ;
+;                                             ;                ;
+; Total combinational functions               ; 444            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 47             ;
+;     -- 3 input functions                    ; 169            ;
+;     -- <=2 input functions                  ; 228            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 167            ;
+;     -- arithmetic mode                      ; 277            ;
+;                                             ;                ;
+; Total registers                             ; 170            ;
+;     -- Dedicated logic registers            ; 170            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 28             ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+; Maximum fan-out node                        ; clock_in~input ;
+; Maximum fan-out                             ; 170            ;
+; Total fan-out                               ; 1793           ;
+; Average fan-out                             ; 2.68           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; |ex_01                      ; 313 (225)         ; 122 (54)     ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |ex_01                        ; work         ;
-;    |debounce:debounce_down| ; 44 (44)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ex_01|debounce:debounce_down ; work         ;
-;    |debounce:debounce_up|   ; 44 (44)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ex_01|debounce:debounce_up   ; work         ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ex_01                     ; 444 (444)         ; 170 (170)    ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |ex_01              ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; x[1..30]                               ; Stuck at GND due to stuck port data_in ;
-; x[0]                                   ; Stuck at VCC due to stuck port data_in ;
-; output_buffer[3]                       ; Merged with deposit_sig[3]             ;
-; output_buffer[2]                       ; Merged with deposit_sig[2]             ;
-; output_buffer[1]                       ; Merged with deposit_sig[1]             ;
-; output_buffer[0]                       ; Merged with deposit_sig[0]             ;
-; \PROCESSING:deposit[10..31]            ; Lost fanout                            ;
-; Total Number of Removed Registers = 57 ;                                        ;
-+----------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++--------------------------------------------------+
+; State Machine - |ex_01|state                     ;
++------------+-----------+------------+------------+
+; Name       ; state.ANI ; state.SHOW ; state.INIT ;
++------------+-----------+------------+------------+
+; state.INIT ; 0         ; 0          ; 0          ;
+; state.SHOW ; 0         ; 1          ; 1          ;
+; state.ANI  ; 1         ; 0          ; 1          ;
++------------+-----------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                               ;
-+-------------------------+--------------------+----------------------------------------------------------------------------+
-; Register name           ; Reason for Removal ; Registers Removed due to This Register                                     ;
-+-------------------------+--------------------+----------------------------------------------------------------------------+
-; \PROCESSING:deposit[31] ; Lost Fanouts       ; \PROCESSING:deposit[30], \PROCESSING:deposit[29], \PROCESSING:deposit[28], ;
-;                         ;                    ; \PROCESSING:deposit[27], \PROCESSING:deposit[26], \PROCESSING:deposit[25], ;
-;                         ;                    ; \PROCESSING:deposit[24], \PROCESSING:deposit[23], \PROCESSING:deposit[22], ;
-;                         ;                    ; \PROCESSING:deposit[21], \PROCESSING:deposit[20], \PROCESSING:deposit[19], ;
-;                         ;                    ; \PROCESSING:deposit[18], \PROCESSING:deposit[17], \PROCESSING:deposit[16], ;
-;                         ;                    ; \PROCESSING:deposit[15], \PROCESSING:deposit[14], \PROCESSING:deposit[13], ;
-;                         ;                    ; \PROCESSING:deposit[12], \PROCESSING:deposit[11], \PROCESSING:deposit[10]  ;
-+-------------------------+--------------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Registers Removed During Synthesis                               ;
++---------------------------------------+--------------------------+
+; Register name                         ; Reason for Removal       ;
++---------------------------------------+--------------------------+
+; water_level[0]                        ; Merged with aux_level[0] ;
+; water_level[1]                        ; Merged with aux_level[1] ;
+; water_level[2]                        ; Merged with aux_level[2] ;
+; water_level[3]                        ; Merged with aux_level[3] ;
+; Total Number of Removed Registers = 4 ;                          ;
++---------------------------------------+--------------------------+
 
 
 +------------------------------------------------------+
@@ -251,38 +245,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 122   ;
-; Number of registers using Synchronous Clear  ; 62    ;
-; Number of registers using Synchronous Load   ; 30    ;
-; Number of registers using Asynchronous Clear ; 42    ;
+; Total registers                              ; 170   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 170   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 74    ;
+; Number of registers using Clock Enable       ; 90    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; deposit_sig[0]                         ; 13      ;
-; x[31]                                  ; 1       ;
-; Total number of inverted registers = 2 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |ex_01|debounce:debounce_up|debounce_counter[28]   ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |ex_01|debounce:debounce_down|debounce_counter[27] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |ex_01|deposit                                     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ex_01|output                                      ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |ex_01|output                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |ex_01|queue_pos[24]       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |ex_01|aux_level[2]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ex_01|queue_pos[0]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ex_01|state               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ex_01|queue_pos           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ex_01|counter             ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |ex_01|aux_level           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -295,32 +280,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_up ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; d_time         ; 1     ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_down ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; d_time         ; 1     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -329,43 +294,48 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jun 13 17:19:09 2018
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Jun 26 04:48:49 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex_01 -c ex_01
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file ex_01.vhd
     Info (12022): Found design unit 1: ex_01-ex_01
     Info (12023): Found entity 1: ex_01
 Info (12021): Found 2 design units, including 1 entities, in source file debounce_maneiro.vhd
     Info (12022): Found design unit 1: debounce-debounce
     Info (12023): Found entity 1: debounce
+Info (12021): Found 2 design units, including 1 entities, in source file ex_02.vhd
+    Info (12022): Found design unit 1: ex_02-ex_02
+    Info (12023): Found entity 1: ex_02
 Info (12127): Elaborating entity "ex_01" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(55): object "but_plus" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(56): object "but_plus_still_pressed" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(57): object "but_min" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(58): object "but_min_still_pressed" assigned a value but never read
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_up"
+Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(41): object "show_count" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(42): object "vector_out" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(56): object "count_level" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ex_01.vhd(57): object "enchimento" assigned a value but never read
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "output[0]" is stuck at GND
-    Warning (13410): Pin "output[1]" is stuck at GND
-    Warning (13410): Pin "output[2]" is stuck at GND
-    Warning (13410): Pin "output[3]" is stuck at GND
+    Warning (13410): Pin "output_seg_count[5]" is stuck at GND
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register queue_lenght_var[31] will power up to Low
-    Critical Warning (18010): Register queue_lenght_var[0] will power up to Low
-    Critical Warning (18010): Register \PROCESSING:deposit[0] will power up to Low
+    Critical Warning (18010): Register aux_level[0] will power up to Low
+    Critical Warning (18010): Register queue_pos[31] will power up to Low
+    Critical Warning (18010): Register queue_pos[0] will power up to Low
+    Critical Warning (18010): Register counter[31] will power up to Low
+    Critical Warning (18010): Register counter[0] will power up to Low
+    Critical Warning (18010): Register counter_level[31] will power up to Low
+    Critical Warning (18010): Register counter_level[0] will power up to Low
+    Critical Warning (18010): Register aux_level[31] will power up to Low
+    Critical Warning (18010): Register up_down_pos[31] will power up to Low
+    Critical Warning (18010): Register up_down_pos[0] will power up to Low
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 388 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 487 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 367 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 557 megabytes
-    Info: Processing ended: Wed Jun 13 17:19:12 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 459 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Tue Jun 26 04:48:53 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

@@ -1,6 +1,6 @@
 Flow report for ex_01
-Wed Jun 13 17:19:25 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Jun 26 04:49:13 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Flow Summary                                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun 13 17:19:22 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; ex_01                                           ;
-; Top-level Entity Name              ; ex_01                                           ;
-; Family                             ; Cyclone III                                     ;
-; Device                             ; EP3C16F484C6                                    ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 346 / 15,408 ( 2 % )                            ;
-;     Total combinational functions  ; 314 / 15,408 ( 2 % )                            ;
-;     Dedicated logic registers      ; 122 / 15,408 ( < 1 % )                          ;
-; Total registers                    ; 122                                             ;
-; Total pins                         ; 21 / 347 ( 6 % )                                ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 516,096 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Tue Jun 26 04:49:08 2018      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; ex_01                                      ;
+; Top-level Entity Name              ; ex_01                                      ;
+; Family                             ; Cyclone III                                ;
+; Device                             ; EP3C16F484C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 451 / 15,408 ( 3 % )                       ;
+;     Total combinational functions  ; 445 / 15,408 ( 3 % )                       ;
+;     Dedicated logic registers      ; 170 / 15,408 ( 1 % )                       ;
+; Total registers                    ; 170                                        ;
+; Total pins                         ; 28 / 347 ( 8 % )                           ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
+; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
++------------------------------------+--------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/13/2018 17:19:09 ;
+; Start date & time ; 06/26/2018 04:48:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ex_01               ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 93094405155231.152892114901568        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 255750535111108.152999933000908       ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 557 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 822 MB              ; 00:00:07                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 469 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 510 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4689 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:11     ; 1.2                     ; 5216 MB             ; 00:00:12                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4700 MB             ; 00:00:03                           ;
+; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +106,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
