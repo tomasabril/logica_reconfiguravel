@@ -1,0 +1,18 @@
+
+State Machine - |ex01|andar_ant
+Name andar_ant.and3 andar_ant.and2 andar_ant.and1 
+andar_ant.and1 0 0 0 
+andar_ant.and2 0 1 1 
+andar_ant.and3 1 0 1 
+
+State Machine - |ex01|andar
+Name andar.and3 andar.and2 andar.and1 
+andar.and1 0 0 0 
+andar.and2 0 1 1 
+andar.and3 1 0 1 
+
+State Machine - |ex01|prox_andar
+Name prox_andar.and3 prox_andar.and2 prox_andar.and1 
+prox_andar.and1 0 0 0 
+prox_andar.and2 0 1 1 
+prox_andar.and3 1 0 1 
