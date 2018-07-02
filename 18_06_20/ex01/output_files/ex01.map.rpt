@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ex01
-Sat Jun 23 20:52:35 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Sun Jul 01 22:56:22 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -13,15 +13,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |ex01|andar_ant
-  9. State Machine - |ex01|andar
- 10. State Machine - |ex01|prox_andar
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |ex01
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. State Machine - |ex01|andar
+  9. State Machine - |ex01|prox_andar
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |ex01
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,24 +43,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 23 20:52:35 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; ex01                                            ;
-; Top-level Entity Name              ; ex01                                            ;
-; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 115                                             ;
-;     Total combinational functions  ; 112                                             ;
-;     Dedicated logic registers      ; 42                                              ;
-; Total registers                    ; 42                                              ;
-; Total pins                         ; 18                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 01 22:56:22 2018      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; ex01                                       ;
+; Top-level Entity Name              ; ex01                                       ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 120                                        ;
+;     Total combinational functions  ; 116                                        ;
+;     Dedicated logic registers      ; 44                                         ;
+; Total registers                    ; 44                                         ;
+; Total pins                         ; 18                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -162,13 +161,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; ex01.vhd                         ; yes             ; User VHDL File  ; D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Logica Reconfiguravel/logica_reconfiguravel/18_06_20/ex01/ex01.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; ex01.vhd                         ; yes             ; User VHDL File  ; D:/GitHub/logica_reconfiguravel/18_06_20/ex01/ex01.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -176,28 +175,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 115       ;
+; Estimated Total logic elements              ; 120       ;
 ;                                             ;           ;
-; Total combinational functions               ; 112       ;
+; Total combinational functions               ; 116       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 65        ;
-;     -- 3 input functions                    ; 9         ;
-;     -- <=2 input functions                  ; 38        ;
+;     -- 4 input functions                    ; 41        ;
+;     -- 3 input functions                    ; 11        ;
+;     -- <=2 input functions                  ; 64        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 83        ;
+;     -- normal mode                          ; 87        ;
 ;     -- arithmetic mode                      ; 29        ;
 ;                                             ;           ;
-; Total registers                             ; 42        ;
-;     -- Dedicated logic registers            ; 42        ;
+; Total registers                             ; 44        ;
+;     -- Dedicated logic registers            ; 44        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 18        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 42        ;
-; Total fan-out                               ; 541       ;
-; Average fan-out                             ; 2.85      ;
+; Maximum fan-out                             ; 44        ;
+; Total fan-out                               ; 509       ;
+; Average fan-out                             ; 2.60      ;
 +---------------------------------------------+-----------+
 
 
@@ -206,21 +205,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ex01                      ; 112 (112)         ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |ex01               ; work         ;
+; |ex01                      ; 116 (116)         ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |ex01               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------+
-; State Machine - |ex01|andar_ant                                   ;
-+----------------+----------------+----------------+----------------+
-; Name           ; andar_ant.and3 ; andar_ant.and2 ; andar_ant.and1 ;
-+----------------+----------------+----------------+----------------+
-; andar_ant.and1 ; 0              ; 0              ; 0              ;
-; andar_ant.and2 ; 0              ; 1              ; 1              ;
-; andar_ant.and3 ; 1              ; 0              ; 1              ;
-+----------------+----------------+----------------+----------------+
 
 
 Encoding Type:  One-Hot
@@ -252,13 +239,8 @@ Encoding Type:  One-Hot
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; btn_vec[0]                            ; Stuck at GND due to stuck port data_in ;
 ; final[2,3]                            ; Stuck at GND due to stuck port data_in ;
-; output_led[0]~reg0                    ; Stuck at GND due to stuck port data_in ;
-; andar_ant.and1                        ; Lost fanout                            ;
-; andar_ant.and2                        ; Lost fanout                            ;
-; andar_ant.and3                        ; Lost fanout                            ;
-; Total Number of Removed Registers = 7 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -267,10 +249,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 42    ;
+; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 40    ;
+; Number of registers using Asynchronous Clear ; 41    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 30    ;
 ; Number of registers using Preset             ; 0     ;
@@ -282,9 +264,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 10:1               ; 30 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |ex01|t[26]                ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |ex01|prox_andar           ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |ex01|Selector1            ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |ex01|t[26]                ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |ex01|prox_andar           ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |ex01|Selector0            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -303,7 +285,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -312,32 +294,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jun 23 20:52:33 2018
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sun Jul 01 22:56:18 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex01 -c ex01
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ex01.vhd
     Info (12022): Found design unit 1: ex01-ex01
     Info (12023): Found entity 1: ex01
 Info (12127): Elaborating entity "ex01" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ex01.vhd(32): object "andar_ant" assigned a value but never read
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "output_led[0]" is stuck at GND
     Warning (13410): Pin "floor_display[5]" is stuck at GND
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register final[0] will power up to Low
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 138 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 120 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 553 megabytes
-    Info: Processing ended: Sat Jun 23 20:52:35 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 126 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 551 megabytes
+    Info: Processing ended: Sun Jul 01 22:56:22 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

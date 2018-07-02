@@ -96,7 +96,7 @@ BEGIN
 
             output_led <= btn_vec;
             --temporizador para maquina de estado
-            IF (t      <= tmax AND andar ! = prox_andar) THEN
+            IF (t      <= tmax AND andar /= prox_andar) THEN
                 t          <= t + 1;
             END IF;
 
