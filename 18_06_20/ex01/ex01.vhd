@@ -1,3 +1,5 @@
+-- exercicio do elevador
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -28,137 +30,131 @@ ARCHITECTURE ex01 OF ex01 IS
     --enumerated type for the state machine
     TYPE state_type IS (and1, and2, and3);
     -- Register to hold the current state
-    SIGNAL andar       : state_type;
-	 SIGNAL andar_ant   : state_type;
-	 
-	 signal output_led_sig: integer;
-	 
-    SIGNAL final       : INTEGER;
-    SIGNAL saidabin    : STD_LOGIC_VECTOR(11 DOWNTO 0);
-    SIGNAL saidadecbin : STD_LOGIC_VECTOR(3 DOWNTO 0);
-	 
-	 constant tmax: natural    :=   900_000_000;
-	 constant waitmax: natural :=   150_000_000;
-	 signal t: natural range 0 to tmax;
+    SIGNAL andar          : state_type;
+
+    SIGNAL output_led_sig : INTEGER;
+
+    --para saida no 7 segmentos
+    SIGNAL final          : INTEGER;
+    SIGNAL saidabin       : STD_LOGIC_VECTOR(11 DOWNTO 0);
+    SIGNAL saidadecbin    : STD_LOGIC_VECTOR(3 DOWNTO 0);
+
+    --valor maximo da contagem
+    CONSTANT tmax         : NATURAL := 900_000_000;
+    --esperar ate esse numero para mudar de estado
+    CONSTANT waitmax      : NATURAL := 150_000_000;
+    --contador
+    SIGNAL t              : NATURAL RANGE 0 TO tmax;
+
 BEGIN
-
-
     PROCESS (clk, rst)
         VARIABLE prox_andar : state_type;
-        VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);	  
-	
+        VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);
+
     BEGIN
         IF (rst = '0') THEN
-				prox_andar := and1;
-				btn_vec := "000";
-				t <= 0;
-				andar <= and1;
-				final <= 0;
-        
-
-        elsIF (rising_edge(clk)) THEN
+            prox_andar := and1;
+            btn_vec    := "000";
+            t     <= 0;
+            andar <= and1;
+            final <= 0;
+        ELSIF (rising_edge(clk)) THEN
 
             --read buttons
             IF (btn(0) = '0') THEN
-                btn_vec(0) := '1';	 
+                btn_vec(0) := '1';
             END IF;
             IF (btn(1) = '0') THEN
-				    btn_vec(1) := '1';
+                btn_vec(1) := '1';
             END IF;
             IF (btn(2) = '0') THEN
                 btn_vec(2) := '1';
-				END IF;
+            END IF;
             IF (btn(3) = '0') THEN
                 btn_vec(0) := '1';
-				END IF;
+            END IF;
             IF (btn(4) = '0') THEN
                 btn_vec(1) := '1';
             END IF;
             IF (btn(5) = '0') THEN
                 btn_vec(2) := '1';
             END IF;
-				
-				
             --define next andar
             ----go over list to find where the elevator has to go
-            IF (btn_vec(0) = '1') THEN
-                prox_andar := and1;
-                btn_vec(0) := '0';
-					 t<= 0;
-            ELSIF (btn_vec(1) = '1') THEN
-                prox_andar := and2;
-                btn_vec(1) := '0';
-					 t<= 0;
-            ELSIF (btn_vec(2) = '1') THEN
-                prox_andar := and3;
-                btn_vec(2) := '0';
-					 t<= 0;
+            IF (andar = prox_andar) THEN
+                IF (btn_vec(0) = '1') THEN
+                    prox_andar := and1;
+                    btn_vec(0) := '0';
+                ELSIF (btn_vec(1) = '1') THEN
+                    prox_andar := and2;
+                    btn_vec(1) := '0';
+                ELSIF (btn_vec(2) = '1') THEN
+                    prox_andar := and3;
+                    btn_vec(2) := '0';
+                END IF;
             END IF;
-				
-				output_led <= btn_vec;
-  
-  
-				--temporizador para maquina de estado
-				if( t <= tmax) then
-					t <= t +1;
-				end if;
-  
-				-- state machine
-				andar_ant <= andar;
+
+            output_led <= btn_vec;
+            --temporizador para maquina de estado
+            IF (t      <= tmax AND andar ! = prox_andar) THEN
+                t          <= t + 1;
+            END IF;
+
+            -- state machine
             CASE andar IS
                 WHEN and1 =>
                     -- show output
                     final <= 1;
                     --go to next state
-						  if t >= waitmax then						  
-							  IF (prox_andar = and2) THEN
-									andar <= and2;
-									t<=0;
-							  ELSIF (prox_andar = and3) THEN
-									andar <= and3;
-									t<=0;
-							  END IF;
-						  end if;
+                    IF t >= waitmax THEN
+                        IF (prox_andar = and2) THEN
+                            andar <= and2;
+                            t     <= 0;
+                        ELSIF (prox_andar = and3) THEN
+                            andar <= and3;
+                            t     <= 0;
+                        END IF;
+                    END IF;
 
                 WHEN and2 =>
                     -- show output
                     final <= 2;
                     --go to next state
-                    if t >= waitmax then
-						  IF (prox_andar = and1) THEN
-                        andar <= and1;
-								t<=0;
-                    ELSIF (prox_andar = and3) THEN
-                        andar <= and3;
-								t<=0;
+                    IF t >= waitmax THEN
+                        IF (prox_andar = and1) THEN
+                            andar <= and1;
+                            t     <= 0;
+                        ELSIF (prox_andar = and3) THEN
+                            andar <= and3;
+                            t     <= 0;
+                        END IF;
                     END IF;
-						  end if;
 
                 WHEN and3 =>
                     -- show output
                     final <= 3;
                     --go to next state
-						  if t >= waitmax then
-                    IF (prox_andar = and1) THEN
-                        andar <= and1;
-								t<=0;
-                    ELSIF (prox_andar = and2) THEN
-                        andar <= and2;
-								t<=0;
+                    IF t >= waitmax THEN
+                        IF (prox_andar = and1) THEN
+                            andar <= and1;
+                            t     <= 0;
+                        ELSIF (prox_andar = and2) THEN
+                            andar <= and2;
+                            t     <= 0;
+                        END IF;
                     END IF;
-						  end if;
-						  
+
             END CASE;
         END IF;
 
     END PROCESS;
---	 
---	 output_led <= "100" when output_led_sig = 1 elsE
---	 "010" when output_led_sig = 1 elsE
---	 "100" when output_led_sig = 1 elsE
---	 "000"
---	 ;
-	 
+    --
+    --	 output_led <= "100" when output_led_sig = 1 elsE
+    --	 "010" when output_led_sig = 1 elsE
+    --	 "100" when output_led_sig = 1 elsE
+    --	 "000"
+    --	 ;
+
     saidabin <= std_LOGIC_VECTOR(to_unsigned(final, 12));
 
     saida_GENERATE_FOR : FOR i IN 0 TO 3 GENERATE
@@ -183,5 +179,4 @@ BEGIN
         "0111000" WHEN saidadecbin = "1111" ELSE
         "1111111";
 END architecture;
-
 
