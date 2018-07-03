@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ex_2
-Wed Jun 13 20:23:37 2018
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Tue Jul 03 20:41:49 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -44,24 +44,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 13 20:23:37 2018      ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name                      ; ex_2                                       ;
-; Top-level Entity Name              ; ex_2                                       ;
-; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 112                                        ;
-;     Total combinational functions  ; 111                                        ;
-;     Dedicated logic registers      ; 39                                         ;
-; Total registers                    ; 39                                         ;
-; Total pins                         ; 24                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jul 03 20:41:49 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ex_2                                            ;
+; Top-level Entity Name              ; ex_2                                            ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 115                                             ;
+;     Total combinational functions  ; 114                                             ;
+;     Dedicated logic registers      ; 39                                              ;
+; Total registers                    ; 39                                              ;
+; Total pins                         ; 24                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -151,60 +151,54 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
-; ex_2.vhd                         ; yes             ; Auto-Found VHDL File  ; C:/Users/allan/OneDrive/Documentos/logica_vhdl/18_06_06/ex_2/ex_2.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                              ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; ex_2.vhd                         ; yes             ; Auto-Found VHDL File  ; D:/Dropbox/Dokumente/Mechatronik/6. Semester SS18 (BR)/Logica Reconfiguravel/logica_reconfiguravel/18_06_06/ex_2/ex_2.vhd ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 112        ;
-;                                             ;            ;
-; Total combinational functions               ; 111        ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 62         ;
-;     -- 3 input functions                    ; 10         ;
-;     -- <=2 input functions                  ; 39         ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 80         ;
-;     -- arithmetic mode                      ; 31         ;
-;                                             ;            ;
-; Total registers                             ; 39         ;
-;     -- Dedicated logic registers            ; 39         ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 24         ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-; Maximum fan-out node                        ; state.init ;
-; Maximum fan-out                             ; 40         ;
-; Total fan-out                               ; 511        ;
-; Average fan-out                             ; 2.58       ;
-+---------------------------------------------+------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 115            ;
+;                                             ;                ;
+; Total combinational functions               ; 114            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 31             ;
+;     -- 3 input functions                    ; 13             ;
+;     -- <=2 input functions                  ; 70             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 83             ;
+;     -- arithmetic mode                      ; 31             ;
+;                                             ;                ;
+; Total registers                             ; 39             ;
+;     -- Dedicated logic registers            ; 39             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 24             ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+; Maximum fan-out node                        ; clock_in~input ;
+; Maximum fan-out                             ; 39             ;
+; Total fan-out                               ; 458            ;
+; Average fan-out                             ; 2.28           ;
++---------------------------------------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,7 +206,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ex_2                      ; 111 (111)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |ex_2               ; work         ;
+; |ex_2                      ; 114 (114)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |ex_2               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -282,7 +276,7 @@ Encoding Type:  One-Hot
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; current[0]                             ; 10      ;
-; lado_esq[0]                            ; 3       ;
+; lado_esq[0]                            ; 2       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
@@ -326,10 +320,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jun 13 20:23:34 2018
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jul 03 20:41:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex_2 -c ex_2
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file ex_2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: ex_2-ex_2
     Info (12023): Found entity 1: ex_2
@@ -356,14 +350,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "input"
-Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 140 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 113 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4691 megabytes
-    Info: Processing ended: Wed Jun 13 20:23:37 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21061): Implemented 116 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 542 megabytes
+    Info: Processing ended: Tue Jul 03 20:41:49 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

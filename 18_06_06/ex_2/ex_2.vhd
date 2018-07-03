@@ -62,7 +62,7 @@ BEGIN
                     WHEN init =>
                         state <= G;
                     WHEN G =>
-                        IF (counter >= 120_000_000 ) THEN
+                        IF (counter >= 150_000_000 ) THEN
 									 counter := 0;
                             state <= Y;
                         END IF;
