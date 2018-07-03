@@ -21,6 +21,8 @@ ENTITY
         btn           : IN STD_LOGIC_vector((n - 1) + n DOWNTO 0);
         -- mostra botoes que estao apertados
         output_led    : OUT STD_LOGIC_VECTOR (n - 1 DOWNTO 0);
+		  -- output elevador em movimento
+		  elevator_moving : out STD_LOGIC;
         -- displays, mostra o andar atual do elevador
         floor_display : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
@@ -50,7 +52,7 @@ BEGIN
     PROCESS (clk, rst)
         VARIABLE prox_andar : state_type;
         VARIABLE btn_vec    : std_logic_vector(n - 1 DOWNTO 0);
-
+		  variable moving : boolean;
     BEGIN
         IF (rst = '0') THEN
             prox_andar := and1;
@@ -58,6 +60,7 @@ BEGIN
             t     <= 0;
             andar <= and1;
             final <= 0;
+				moving := false;
         ELSIF (rising_edge(clk)) THEN
 
             --read buttons
@@ -99,6 +102,19 @@ BEGIN
             IF (t      <= tmax AND andar /= prox_andar) THEN
                 t          <= t + 1;
             END IF;
+				-- mostrador do elevador em movimento
+				if(t > 0) then
+					if(t mod 5_000_000 = 0) then
+						moving := not moving;
+					end if;
+				elsE
+					moving := false;
+				end if;
+				if(moving = true) then
+					elevator_moving <= '0';
+				elsE
+					elevator_moving <= '1';
+				end if;
 
             -- state machine
             CASE andar IS
