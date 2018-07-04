@@ -89,15 +89,15 @@ btn[2] => btn_vec.OUTPUTSELECT
 btn[3] => btn_vec.OUTPUTSELECT
 btn[4] => btn_vec.OUTPUTSELECT
 btn[5] => btn_vec.OUTPUTSELECT
-output_led[0] <= output_led[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-output_led[1] <= output_led[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-output_led[2] <= output_led[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[0] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[1] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[2] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[3] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[4] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[5] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
-floor_display[6] <= floor_display.DB_MAX_OUTPUT_PORT_TYPE
+output_led[0] << output_led[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_led[1] << output_led[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_led[2] << output_led[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[0] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[1] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[2] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[3] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[4] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[5] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
+floor_display[6] << floor_display.DB_MAX_OUTPUT_PORT_TYPE
 
 
