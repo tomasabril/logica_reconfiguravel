@@ -1,6 +1,11 @@
 Flow report for ex01
+<<<<<<< HEAD
 Tue Jul 03 03:04:58 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+=======
+Tue Jul 03 20:26:09 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 
 
 ---------------------
@@ -37,6 +42,7 @@ applicable agreement for further details.
 
 
 
+<<<<<<< HEAD
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
@@ -57,6 +63,28 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
+=======
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Tue Jul 03 20:26:06 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ex01                                            ;
+; Top-level Entity Name              ; ex01                                            ;
+; Family                             ; Cyclone III                                     ;
+; Device                             ; EP3C16F484C6                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 720 / 15,408 ( 5 % )                            ;
+;     Total combinational functions  ; 718 / 15,408 ( 5 % )                            ;
+;     Dedicated logic registers      ; 46 / 15,408 ( < 1 % )                           ;
+; Total registers                    ; 46                                              ;
+; Total pins                         ; 19 / 347 ( 5 % )                                ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 516,096 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 
 
 +-----------------------------------------+
@@ -64,12 +92,17 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< HEAD
 ; Start date & time ; 07/03/2018 03:04:36 ;
+=======
+; Start date & time ; 07/03/2018 20:25:52 ;
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ex01                ;
 +-------------------+---------------------+
 
 
+<<<<<<< HEAD
 +------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                 ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
@@ -83,6 +116,21 @@ applicable agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
+=======
++-----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 93094405155231.153066035209928 ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --         ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -90,11 +138,19 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4685 MB             ; 00:00:02                           ;
 ; Fitter                    ; 00:00:09     ; 1.1                     ; 5209 MB             ; 00:00:09                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 4620 MB             ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4676 MB             ; 00:00:02                           ;
 ; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
+=======
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 584 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 827 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 469 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 521 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:14                           ;
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,10 +159,17 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis      ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
 ; Fitter                    ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
 ; Assembler                 ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; DESKTOP-T7AU4LJ  ; Windows 7 ; 6.2        ; x86_64         ;
+=======
+; Analysis & Synthesis      ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-G4G3F6S  ; Windows 7 ; 6.2        ; x86_64         ;
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 +---------------------------+------------------+-----------+------------+----------------+
 
 

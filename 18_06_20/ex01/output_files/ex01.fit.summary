@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Tue Jul 03 03:04:49 2018
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+=======
+Fitter Status : Successful - Tue Jul 03 20:26:04 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 Revision Name : ex01
 Top-level Entity Name : ex01
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 118 / 15,408 ( < 1 % )
-    Total combinational functions : 116 / 15,408 ( < 1 % )
-    Dedicated logic registers : 44 / 15,408 ( < 1 % )
-Total registers : 44
-Total pins : 18 / 347 ( 5 % )
+Total logic elements : 720 / 15,408 ( 5 % )
+    Total combinational functions : 718 / 15,408 ( 5 % )
+    Dedicated logic registers : 46 / 15,408 ( < 1 % )
+Total registers : 46
+Total pins : 19 / 347 ( 5 % )
 Total virtual pins : 0
 Total memory bits : 0 / 516,096 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )

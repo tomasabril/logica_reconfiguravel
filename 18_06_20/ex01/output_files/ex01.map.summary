@@ -1,13 +1,18 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Tue Jul 03 03:04:38 2018
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+=======
+Analysis & Synthesis Status : Successful - Tue Jul 03 20:25:54 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+>>>>>>> ee636a1d698a6258fc3fad827ec39c4e2ce4f554
 Revision Name : ex01
 Top-level Entity Name : ex01
 Family : Cyclone III
-Total logic elements : 120
-    Total combinational functions : 116
-    Dedicated logic registers : 44
-Total registers : 44
-Total pins : 18
+Total logic elements : 722
+    Total combinational functions : 718
+    Dedicated logic registers : 46
+Total registers : 46
+Total pins : 19
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
